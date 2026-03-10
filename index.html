@@ -107,6 +107,16 @@
       Sign up
     </button>
   </div>
+
+  <div id="popup" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-6 hidden">
+    <div class="relative">
+      <img alt="popup" src="./assest/pop-up/modal-2-img (1).jpg" class="max-w-3xl w-full rounded-xl shadow-2xl">
+      <button id="closePopup" class="absolute top-3 right-3 bg-white text-black w-8 h-8 rounded-full flex items-center justify-center">
+        ✕
+      </button>
+    </div>
+  </div>
+
   <section class="pt-32 pb-20 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
       <div>
@@ -761,6 +771,200 @@
     </div>
   </section>
 
+  <section class="bg-gray-100 py-20">
+    <div class="max-w-7xl mx-auto overflow-hidden">
+      <div id="review-carousel" class="flex gap-6 overflow-x-scroll scroll-smooth pb-8">
+        <div id="card-1" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            Etiam sapien sagittis congue augue a massa varius egestas ultrice varius magna a tempus aliquet undo cursus suscipit                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-1" src="assest/carousal/review-author-1.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Scott Boxer</h4>
+              <p class="text-sm text-gray-500">@scott boxer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-2" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            At sagittis congue augue diam egestas magna an ipsum vitae purus ipsum primis and cubilia laoreet augue egestas a luctus donec Itrice ligula porta augue magna suscipit lectus. gestas                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-2" src="assest/carousal/review-author-2.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Joel Peterson</h4>
+              <p class="text-sm text-gray-500">Internet Surfer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-3" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            Mauris gestas magnis a sapien etiam sapien congue an augue egestas and ultrice vitae purus diam an integer congue magna ligula egestas magna suscipit                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-3" src="assest/carousal/review-author-3.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Marisol19</h4>
+              <p class="text-sm text-gray-500">@marisol19</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-4" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            Mauris donec a magnis sapien etiam pretium a congue augue volutpat lectus aenean magna and undo mauris lectus laoreet tempor egestas rutrum                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-4" src="assest/carousal/review-author-4.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Leslie D.</h4>
+              <p class="text-sm text-gray-500">Web Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-5" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            An augue cubilia undo laoreet magna suscipit egestas ipsum lectus purus ipsum and primis augue an ultrice ligula egestas suscipit a lectus gestas auctor tempus feugiat impedit                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-5" src="assest/carousal/review-author-5.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Jennifer Harper</h4>
+              <p class="text-sm text-gray-500">App Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-6" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            An augue cubilia laoreet undo magna ipsum semper suscipit egestas magna ipsum ligula a vitae purus and ipsum primis cubilia magna suscipit                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-6" src="assest/carousal/review-author-6.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Jonathan Barnes</h4>
+              <p class="text-sm text-gray-500">jQuery Programmer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-7" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            Augue egestas porta tempus volutpat. egestas augue cubilia laoreet a magna suscipit luctus dolor blandit vitae purus neque tempus an aliquet porta gestas rutrum blandit vitae                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-7" src="assest/carousal/review-author-7.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Mike Harris</h4>
+              <p class="text-sm text-gray-500">Graphic Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="card-8" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-600 mb-6">
+            Augue at vitae purus tempus egestas volutpat augue undo cubilia laoreet magna suscipit luctus dolor blandit at purus tempus feugiat impedit                
+          </p>
+          <div class="flex items-center gap-4">
+            <img alt="review-img-8" src="assest/carousal/review-author-8.jpg" class="w-12 h-12 rounded-full"/>
+            <div>
+              <h4 class="font-semibold text-gray-800">Evelyn Martinez</h4>
+              <p class="text-sm text-gray-500">WordPress Consultant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h4 class="text-center text-gray-500 text-2xl font-bold mb-12">
+      Our clients love us as much as we love them
+    </h4>
+    <div class="max-w-5xl mx-auto grid grid-cols-3 gap-10 items-center text-center">
+      <div class="flex flex-col items-center gap-4">
+        <img alt="brand-21" src="assest/featrue card/brand-21.png" class="h-10 object-contain">
+        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-gray-600 text-sm font-semibold">4.7/5</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <img alt="brand-22" src="assest/featrue card/brand-22.png" class="h-10 object-contain">
+        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-gray-600 text-sm font-semibold">4.95/5</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <img alt="brand-23" src="assest/featrue card/brand-23.png" class="h-10 object-contain">
+        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-gray-600 text-sm font-semibold">4.24/5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-200 py-24">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl lg:text-6xl font-bold text-gray-800 leading-tight">
+        Automate your workflow with our integrations
+      </h2>
+      <h4 class="text-xl text-gray-500 my-8">
+        Ligula risus auctor tempus magna feugiat lacinia.
+      </h4>
+    </div>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 mt-16">
+      <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
+          <img alt="tool-1" src="assest/logo/tool-1.png" class="h-14">
+        </div>
+        <span class="text-gray-700 text-sm font-medium mt-3">Zapier</span>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+          <img alt="tool-2" src="assest/logo/tool-2.png" class="h-14">
+        </div>
+        <span class="text-gray-700 text-sm font-medium mt-3">Google Analytics</span>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+          <img alt="tool-3" src="assest/logo/tool-3.png" class="h-14">
+        </div>
+        <span class="text-gray-700 text-sm font-medium mt-3">Amplitude</span>
+      </div>
+      
+      <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+          <img alt="tool-4" src="assest/logo/tool-4.png" class="h-14">
+        </div>
+        <span class="text-gray-700 text-sm font-medium mt-3">Hubspot</span>
+      </div>
+      
+      <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+          <img alt="tool-5" src="assest/logo/tool-5.png" class="h-14">
+        </div>
+        <span class="text-gray-700 text-sm font-medium mt-3">MailChimp</span>
+      </div>
+    </div>
+    <div class="flex justify-center mt-16">
+      <button class="px-6 py-3 font-semibold text-lg border-2 border-black rounded-md hover:bg-pink-600 hover:text-white transition">
+        View All Integrations
+      </button>
+  </div>
+</section>
+
   <script>
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -774,7 +978,21 @@
       }
     });
 
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("closePopup");
+    const isHomePage =
+      window.location.pathname === "/" ||
+      window.location.pathname.includes("index.html");
 
+    if (isHomePage) {
+      setTimeout(() => {
+        popup.classList.remove("hidden");
+      }, 3000);
+    }
+
+    closeBtn.addEventListener("click", () => {
+      popup.classList.add("hidden");
+    });
 
     const counters = document.querySelectorAll('.counter');
     const section = document.getElementById('stats-section');
@@ -829,6 +1047,17 @@
         logo.src = "./assest/logo/logo-white.png";
       }
     });
+
+    const carousel = document.getElementById("review-carousel");
+    setInterval(() => {
+      carousel.scrollBy({
+        left: 1,
+        behavior: "auto"
+      });
+      if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+        carousel.scrollLeft = 0;
+      }
+    }, 10);
 
   </script>
 </body>
