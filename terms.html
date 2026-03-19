@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martex Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .carousel-track {
+      animation: scroll 25s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</head>
+
+<body class="bg-gray-100">
+  <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-white transition-all duration-300 z-50">
+    <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png" alt="Martex Logo" class="h-8 object-contain">
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-lg text-gray-600 font-medium">
+        <div class="relative group">
+          <button class="flex items-center gap-2 hover:text-blue-600 transition duration-200">
+            Company
+            <span class="text-xs opacity-70">▼</span>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 p-2">
+            <a href="./aboutUs.html" class="block px-4 py-2 rounded-lg hover:bg-gray-50">About Us</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Careers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Customers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Our Blog</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Contact Us</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-blue-600 transition duration-200">Case Studies</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">Pricing</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">FAQs</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" class="font-medium text-gray-800 hover:text-blue-600 transition">Sign In</a>
+        <a href="#" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+          Get Started
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18"></path>
+          <path d="M3 12h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col gap-2 py-4 px-6 text-gray-800 font-medium z-40">
+    <details class="group">
+      <summary class="cursor-pointer flex items-center justify-between py-3">
+        <span>Company</span>
+        <span class="text-xs opacity-70 group-open:rotate-180 transition">▼</span>
+      </summary>
+      <div class="pb-3 flex flex-col">
+        <a href="./aboutUs.html" class="py-2 text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Careers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Customers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Our Blog</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Contact Us</a>
+      </div>
+    </details>
+    <a href="#" class="py-3 hover:text-blue-600">Case Studies</a>
+    <a href="#" class="py-3 hover:text-blue-600">Pricing</a>
+    <a href="#" class="py-3 hover:text-blue-600">FAQs</a>
+    <div class="pt-3 flex items-center gap-4">
+      <a href="#" class="font-medium hover:text-blue-600 transition">Sign In</a>
+      <a href="#" class="ml-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+        Get Started
+      </a>
+    </div>
+  </div>
+
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center gap-6">
+        <h2 class="text-5xl text-gray-700 font-bold">
+            Terms of Service
+        </h2>
+        <h5 class="text-xl text-gray-500">
+            This policy is effective as of 23th October 2022
+        </h5>
+    </div>
+
+    <ul class="flex flex-col gap-10 list-none mt-20 ml-16">
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                1. Ownership
+            </h3>
+            <p class="text-xl text-gray-500">
+                Donec sodales nibh vel (the<strong>"Terms"</strong>) aliquet tristique purus justo suscipit mauris tempus sed laoreet nulla ante purus. Donec dolor and magna undo suscipit magna at tortor laoreet dignissim, undo porttitor massa quisque and mollis, sapien gravida aliquet ipsum ultrices aliquet lorem purus and vitae auris aliquam
+            </p>
+            <p class="text-xl text-gray-500">
+                Sagittis congue augue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce an aliquam nulla lacinia justo molestie blandit justo diam aliquet tortor molestie non sagittis lacinia
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                2. Acceptance of Terms
+            </h3>
+            <p class="text-xl text-gray-500">
+                Sagittis congue augue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce lacinia placerat and nulla justo molestie blandit justo diam aliquet tortor molestie sagittis lacinia undo and mullam molestie diam luctus donec bibendum aliquet massa elementum. Libero quisque lacus and ligula massa lorem fusce cursus fusce nulla vitae massa placerat and mollis, sapien gravida aliquet ipsum ultrices aliquet lorem diam purus undo vitae aliquam auris dapibus libero fusce blandit.
+            </p>
+            <p class="text-xl text-gray-500">
+                Congue augue sagittis egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce lorem nulla an aliquam lacinia justo molestie blandit justo diam an aliquet tortor sagittis lacinia molestie diam egestas
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                3. Service Description
+            </h3>
+            <p class="text-xl text-gray-500">
+                Congue sagittis augue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce aliquam
+            </p>
+            <ul class="list-disc flex flex-col gap-6">
+                <p class="text-xl text-gray-500">
+                    Quaerat sodales sapien undo velna purus euismod purus velna blandit vitae auctor and congue magna tempor sapien gravida laoreet turpis urna augue, viverra a augue eget diam pulvinar
+                </p>
+                <p class="text-xl text-gray-500">
+                    Nemo ipsam egestas volute turpis dolores ut aliquam quaerat sodales sapien congue and augue egestas
+                </p>
+            </ul>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                3.1. Subscription
+            </h3>
+            <p class="text-xl text-gray-500">
+                Integer congue sagittis augue egestas velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque diam augue fusce sapien nulla a primis lacinia ipsum a molestie blandit and justo an aliquet eget molestie sagittis at quaerat sodales
+            </p>
+            <p class="text-xl text-gray-500">
+                Aliqum mullam tincidunt a sapien gravida and diam donec porta.
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                4. Account Information
+            </h3>
+            <p class="text-xl text-gray-500">
+                Sagittis congue augue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce lacinia placerat and nulla justo molestie blandit justo diam aliquet tortor molestie sagittis lacinia undo and mullam molestie diam luctus donec bibendum aliquet massa elementum. Libero quisque lacus and ligula massa lorem.
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                4.1. Registering for an account
+            </h3>
+            <p class="text-xl text-gray-500">
+                Congue augue sagittis egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce lorem nulla an aliquam lacinia justo molestie blandit justo diam an aliquet tortor sagittis lacinia molestie diam egestas
+            </p>
+            <p class="text-xl text-gray-500">
+                Sagittis augue congue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque aliquam fusce blandit
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                4.2. Your responsibility for your account
+            </h3>
+            <p class="text-xl text-gray-500">
+                Integer congue sagittis augue egestas velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque diam augue fusce sapien
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                5. Price and Taxes
+            </h3>
+            <ul class="list-disc flex flex-col gap-6">
+                <li>
+                    <p class="text-xl text-gray-500">
+                        Quaerat sodales sapien undo velna purus euismod purus velna blandit vitae auctor and congue magna tempor sapien gravida laoreet turpis urna augue, viverra a augue eget tempor diam
+                    </p>
+                </li>
+                <li>
+                    <p class="text-xl text-gray-500">
+                        Nemo ipsam egestas volute turpis dolores ut aliquam quaerat sodales sapien congue and augue egestas
+                    </p>
+                </li>
+            </ul>
+            <p class="text-xl text-gray-500">
+                Augue congue sagittis egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque donec and ipsum porta diam lorem sodales an aliquam lacinia justo sapien congue aliquet and sodales a quaerat tortor lacinia egestas
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                6. Method of Payment
+            </h3>
+            <p class="text-xl text-gray-500">
+                Integer congue sagittis augue egestas velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque diam augue fusce sapien
+            </p>
+            <p class="text-xl text-gray-500">
+                Sagittis augue congue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec and augue luctus congue
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                
+            </h3>
+            <p class="text-xl text-gray-500">
+               
+            </p>
+            <p class="text-xl text-gray-500">
+                
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                6.1. Refunds
+            </h3>
+            <p class="text-xl text-gray-500">
+                Integer congue sagittis augue egestas velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque diam augue fusce sapien nulla a primis lacinia ipsum a molestie blandit and justo an aliquet eget molestie sagittis at quaerat sodales
+            </p>
+            <p class="text-xl text-gray-500">
+                Aliqum mullam tincidunt a sapien gravida and diam donec porta.
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                7. Security
+            </h3>
+            <p class="text-xl text-gray-500">
+                Sagittis congue augue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce lacinia placerat and nulla justo molestie blandit justo diam aliquet tortor molestie sagittis lacinia undo and mullam molestie diam luctus donec bibendum aliquet massa elementum. Libero quisque lacus and ligula massa lorem fusce cursus fusce nulla vitae massa placerat and mollis, sapien gravida aliquet ipsum ultrices aliquet lorem diam purus undo vitae aliquam auris dapibus libero fusce blandit.
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                8. Changes to This Terms of Service
+            </h3>
+            <p class="text-xl text-gray-500">
+                Congue augue sagittis egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque blandit fusce lorem nulla an aliquam lacinia justo molestie blandit justo diam an aliquet tortor sagittis lacinia molestie diam egestas
+            </p>
+            <p class="text-xl text-gray-500">
+                Sagittis augue congue egestas integer velna purus purus magna nec suscipit and egestas magna aliquam ipsum vitae purus justo lacus ligula ipsum primis cubilia donec undo augue luctus vitae egestas a molestie donec libero sapien dapibus congue tempor undo quisque fusce cursus neque aliquam fusce blandit
+            </p>
+        </li>
+
+        <li class="flex flex-col gap-6">
+            <h3 class="text-4xl text-gray-700 font-semibold">
+                9. How to Contact Us
+            </h3>
+            <p class="text-xl text-gray-500">
+                If you have any questions or suggestions about this Terms of Service, do not hesitate to contact us at
+            </p>
+            <span class="list-none underline text-blue-700 text-xl font-semibold hover:text-gray-700 transition duration-300">hello@yourdomain.com</span>
+        </li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="flex flex-col items-center justify-center gap-6">
+        <div>
+            <img src="assest/logo/logo-black.png" class="h-12 w-56"/>
+        </div>
+        <div class="border border-gray-300 w-full mt-10"></div>
+        <div class="flex gap-6">
+            <ul class="list-none text-gray-500 text-xl">
+                <li>About Us</li>
+              </ul>
+              <ul class="list-none text-gray-500 text-xl">
+                <li>Careers</li>
+              </ul>
+              <ul class="list-none text-gray-500 text-xl">
+                <li>Our Blog</li>
+              </ul>
+              <ul class="list-none text-gray-500 text-xl">
+                <li>Contact Us</li>
+              </ul>
+        </div>
+        <div>
+            <div class="flex gap-6 text-2xl text-gray-600 mt-6">
+                <a href="#" class="hover:text-blue-600 transition">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+        
+                <a href="#" class="hover:text-pink-500 transition">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+        
+                <a href="#" class="hover:text-red-600 transition">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+        
+                <a href="#" class="hover:text-black transition">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+              </div>
+        </div>
+    </div>
+  </footer>
+
+</body>
+</html>

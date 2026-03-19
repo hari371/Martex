@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martex Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .carousel-track {
+      animation: scroll 25s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</head>
+
+<body>
+  <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-white transition-all duration-300 z-50">
+    <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png" alt="Martex Logo" class="h-8 object-contain">
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-lg text-gray-600 font-medium">
+        <div class="relative group">
+          <button class="flex items-center gap-2 hover:text-blue-600 transition duration-200">
+            Company
+            <span class="text-xs opacity-70">▼</span>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 p-2">
+            <a href="./aboutUs.html" class="block px-4 py-2 rounded-lg hover:bg-gray-50">About Us</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Careers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Customers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Our Blog</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Contact Us</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-blue-600 transition duration-200">Case Studies</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">Pricing</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">FAQs</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" class="font-medium text-gray-800 hover:text-blue-600 transition">Sign In</a>
+        <a href="#" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+          Get Started
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18"></path>
+          <path d="M3 12h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col gap-2 py-4 px-6 text-gray-800 font-medium z-40">
+    <details class="group">
+      <summary class="cursor-pointer flex items-center justify-between py-3">
+        <span>Company</span>
+        <span class="text-xs opacity-70 group-open:rotate-180 transition">▼</span>
+      </summary>
+      <div class="pb-3 flex flex-col">
+        <a href="./aboutUs.html" class="py-2 text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Careers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Customers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Our Blog</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Contact Us</a>
+      </div>
+    </details>
+    <a href="#" class="py-3 hover:text-blue-600">Case Studies</a>
+    <a href="#" class="py-3 hover:text-blue-600">Pricing</a>
+    <a href="#" class="py-3 hover:text-blue-600">FAQs</a>
+    <div class="pt-3 flex items-center gap-4">
+      <a href="#" class="font-medium hover:text-blue-600 transition">Sign In</a>
+      <a href="#" class="ml-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+        Get Started
+      </a>
+    </div>
+  </div>
+
+    <section class="pt-24 m-20">
+        <div>
+            <h2 class="text-6xl text-gray-700 font-bold w-2/3">
+                We provide solutions for your creative ideas
+            </h2>
+
+            <p class="text-lg text-gray-500 w-2/3 mt-10">
+                An enim nullam tempor sapien gravida donec pretium ipsum porta justo integer
+                and purus velna vitae auctor integer undo congue diam purus pretium.
+            </p>
+        </div>
+
+        <div class="mt-20">
+            <div class="grid grid-cols-4 gap-8">
+            <div class="col-span-2 flex justify-end items-end">
+                <img alt="a2-1" src="assest/hero/a2-1.jpg" class="w-2/3 rounded-lg">
+            </div>
+            <div class="col-span-2 flex justify-end">
+                <img alt="a2-3" src="assest/hero/a2-3.jpg" class="rounded-lg">
+            </div>
+            <div class="col-span-2">
+                <img alt="a2-2" src="assest/hero/a2-2.jpg" class="rounded-lg">
+            </div>
+            <div class="col-span-2 flex gap-5">
+                <div class="bg-gray-700 flex items-center rounded-lg p-6">
+                <p class="text-white text-lg leading-relaxed">
+                    Nullam tempor pretium a gravida donec congue ipsum porta justo
+                    integer dolor odio auctor a neque suscipit.
+                    <br><br>
+                    <strong>Charlie Cheever</strong><br>
+                    CEO & CO-FOUNDER
+                </p>
+                </div>
+
+                <img alt="a2-4" src="assest/hero/a2-4.jpg" class="w-1/2 rounded-lg">
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="m-20">
+        <div class="grid grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-3xl text-gray-700 font-bold">Mission and impact</h3>
+                <p class="text-xl text-gray-500 mt-8">Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit</p>
+                <ul class="list-disc mt-8">
+                    <li class="text-xl text-gray-500">Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue dolor cursus</li>
+                    <li class="text-xl text-gray-500 mt-5">Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis ultrice auctor congue magna placerat</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-3xl text-gray-700 font-bold">We deliver results</h3>
+                <p class="text-xl text-gray-500 mt-8">Nemo ipsam egestas volute turpis egestas ipsum and purus sapien ultrice an aliquam quaerat ipsum augue turpis sapien cursus congue magna purus quaerat at ligula purus egestas magna cursus undo varius purus magnis sapien quaerat</p>
+                <p class="text-xl text-gray-500 mt-8">Egestas volute nemo ipsam turpis egestas ipsum and purus sapien ultrice an aliquam quaerat ipsum augue turpis sapien cursus congue magna purus quaerat at ligula purus egestas magna cursus undo varius purus quaerat sapien magnis</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" id="stats-section">
+      <div class="max-w-7xl mx-auto px-6">   
+        <div class="grid md:grid-cols-3 gap-12 text-center">
+          <div>
+            <h3 class="text-5xl font-bold text-gray-800">
+              <span class="counter" data-target="26620">0</span>
+            </h3>
+            <h4 class="text-2xl font-bold pt-5 overline">Happy Customers</h4>
+            <p class="pt-5 text-xl text-gray-600">
+              Porta justo integer and velna vitae auctor and magna quaerat ligula
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-5xl font-bold text-gray-800">
+              <span class="counter" data-target="13540">0</span>%
+            </h3>
+            <h4 class="text-2xl font-bold pt-5 overline">Positive Ratings</h4>
+            <p class="pt-5 text-xl text-gray-600">
+              Porta justo integer and velna vitae auctor and magna quaerat ligula
+            </p>
+          </div>
+        <div>
+          <h3 class="text-5xl font-bold text-gray-800">
+            <span class="counter" data-target="4.87" data-decimal="true">0</span>
+            <span>/5</span>
+          </h3>
+          <h4 class="text-2xl font-bold pt-5 overline">Rating</h4>
+            <p class="pt-5 text-xl text-gray-600">
+              Porta justo integer and velna vitae auctor and magna quaerat ligula
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-20 bg-gray-100 grid lg:grid-cols-2 gap-20 items-center">
+    <div>
+      <p class="text-gray-500 font-semibold uppercase tracking-wider mb-4">
+        Co-founder at Martex
+      </p>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-6">
+        Henry Adams
+      </h2>
+      <p class="text-gray-600 text-xl leading-relaxed mb-6">"Sodales tempor sapien diam purus ipsum quaerat and volute fusce a congue laoreet turpis neque diam auctor turpis vitae dolor magna luctus placerat neque ipsum fusce cursus ligula cursus purus vitae purus and ipsum suscipit. Nemo ipsam cubilia donec turpis undo egestas ipsum a purus sapien ultrice aliquam lacus and quaerat an ipsum augue turpis sapien cursus congue augue"
+      </p>
+    </div>
+    <div class="flex justify-center relative">
+      <a href="https://www.youtube.com/embed/7e90gBu4pas" target="_blank">
+        <div class="absolute z-10 left-1/2 top-1/2 
+                    -translate-x-1/2 -translate-y-1/2 
+                    bg-white w-20 h-20 
+                    rounded-full flex items-center justify-center 
+                    shadow-lg hover:scale-110 transition">
+
+          <i class="fa-solid fa-play text-2xl text-gray-800"></i>
+        </div>
+      </a>
+      <img 
+        src="https://martex-tailwindcss.ibthemespro.com/images/img-17.jpg"
+        alt="Integration Tools"
+        class="w-full max-w-lg rounded-2xl"
+      >
+    </div>
+  </section>
+
+  <section class="m-24">
+    <div class="flex text-center  flex-col m-20">
+      <h2 class="text-7xl text-gray-700 font-semibold">We make your business gain more revenue at a glance</h2>
+      <h5 class="text-2xl text-gray-500 pt-8">Ligula risus auctor tempus magna feugiat lacinia.</h5>
+    </div>
+    <div class="grid grid-cols-2 gap-6">
+      <div >
+        <div class="flex gap-5">
+          <img src="assest/logo/Screenshot 2026-03-12 142637.png" class="w-20 h-15"/>
+          <h3 class="text-3xl font-semibold mb-4">
+            Market Research
+          </h3>
+        </div>
+        <p class="mt-5 text-xl text-gray-500">Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+      </div>
+
+      <div >
+        <div class="flex gap-5">
+          <img src="assest/logo/Screenshot 2026-03-12 142652.png" class="w-20 h-15"/>
+          <h3 class="text-3xl font-semibold mb-4">
+            User Experience
+          </h3>
+        </div>
+        <p class="mt-5 text-xl text-gray-500">Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+      </div>
+
+      <div >
+        <div class="flex gap-5">
+          <img src="assest/logo/Screenshot 2026-03-12 142658.png" class="w-20 h-15"/>
+          <h3 class="text-3xl font-semibold mb-4">
+            Digital Marketing
+          </h3>
+        </div>
+        <p class="mt-5 text-xl text-gray-500">Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+      </div>
+
+      <div >
+        <div class="flex gap-5">
+          <img src="assest/logo/Screenshot 2026-03-12 142705.png" class="w-20 h-15"/>
+          <h3 class="text-3xl font-semibold mb-4">
+            Web Development
+          </h3>
+        </div>
+        <p class="mt-5 text-xl text-gray-500">Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+      </div>
+
+      <div >
+        <div class="flex gap-5">
+          <img src="assest/logo/Screenshot 2026-03-12 142718.png" class="w-20 h-15"/>
+          <h3 class="text-3xl font-semibold mb-4">
+            Brand Design Identity
+          </h3>
+        </div>
+        <p class="mt-5 text-xl text-gray-500">Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+      </div>
+
+      <div >
+        <div class="flex gap-5">
+          <img src="assest/logo/Screenshot 2026-03-12 142711.png" class="w-20 h-15"/>
+          <h3 class="text-3xl font-semibold mb-4">
+            SEO & SMM Services
+          </h3>
+        </div>
+        <p class="mt-5 text-xl text-gray-500">Porta semper lacus cursus feugiat primis ultrice ligula risus ociis auctor and tempus feugiat impedit felis cursus auctor augue mauris blandit ipsum</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="text-center max-w-2xl mx-auto">
+      <h4 class="text-2xl font-bold text-gray-800 bg-transparent leading-tight pt-10">
+        Trusted and used by over 3,400 companies
+      </h4>
+    </div>
+    <div class="overflow-hidden flex items-center my-10 mx-20">
+      <div class="flex items-center bg-transparent w-max gap-8 carousel-track carousel-track:hover">
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-1.png" alt="HOSTING"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-2.png" alt="BD ARCHITECT"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-3.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-4.png" alt="INTDECO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-5.png" alt="SPARK"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-6.png" alt="MOUNTAIN"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-7.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-8.png" alt="PEGASUS"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-9.png" alt="FACTORY"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-10.png" alt="MONEY TALKS"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-1.png" alt="HOSTING"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-2.png" alt="BD ARCHITECT"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-3.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-4.png" alt="INTDECO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-5.png" alt="SPARK"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-6.png" alt="MOUNTAIN"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-7.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-8.png" alt="PEGASUS"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-9.png" alt="FACTORY"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-10.png" alt="MONEY TALKS"/>   
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <div class="text-center w-2/3 mx-auto">
+      <h3 class="text-6xl text-gray-700 font-bold ">All we do is dream and craft amazing products</h3>
+      <h5 class="mt-8 text-2xl text-gray-500">Ligula risus auctor tempus magna feugiat lacinia.</h5>
+    </div>
+    <div class="grid grid-cols-4 mt-20 gap-8">
+      <div>
+        <img src="assest/featrue card/team-1.jpg" alt="team-1" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Jonathan Barnes</h4>
+        <span class="text-xl text-gray-500">Founder and CEO</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-2.jpg" alt="team-2" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Jaime Fletcher</h4>
+        <span class="text-xl text-gray-500">Software Engineer</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-3.jpg" alt="team-3" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Les Bakker</h4>
+        <span class="text-xl text-gray-500">Software Engineer</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-4.jpg" alt="team-4" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Alyssa Garrison</h4>
+        <span class="text-xl text-gray-500">Web Development</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-5.jpg" alt="team-5" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Charlotte Johnson</h4>
+        <span class="text-xl text-gray-500">Content Manager</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-6.jpg" alt="team-6" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Olivia Steiner</h4>
+        <span class="text-xl text-gray-500">Head of Marketing</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-7.jpg" alt="team-7" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Charles Fairless</h4>
+        <span class="text-xl text-gray-500">Operations Manager</span>
+      </div>
+      <div>
+        <img src="assest/featrue card/team-13.jpg" alt="team-13" class="rounded-xl">
+        <h4 class="text-2xl font-bold pt-5">Grow with Us!</h4>
+        <span class="text-xl text-gray-500">hireme@domain.com</span>
+      </div>
+    </div>
+    <div class="mt-20 flex items-center justify-center">
+      <button class="text-2xl font-bold border-2 border-black rounded-lg px-10 py-3 hover:bg-blue-500 hover:text-white hover:border-transparent transition">
+        Join Our Team
+      </button>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <div class="grid grid-cols-2 bg-gray-100 rounded-xl">
+      <div class="flex flex-col gap-8 px-20 justify-center">
+        <h5 class="text-lg text-gray-500 font-semibold">Why Choose Us</h5>
+        <h2  class="text-5xl font-bold">With knowledge, skills & hard work</h2>
+        <p class="text-lg text-gray-500">Sodales tempor sapien quaerat congue eget ipsum laoreet turpis neque auctor vitae eros dolor luctus placerat magna ligula cursus and purus pretium</p>
+        <h4 class="text-3xl font-bold">Your road to success!</h4>
+        <p class="text-lg text-gray-500">Sodales tempor sapien quaerat congue eget ipsum laoreet turpis neque auctor vitae eros dolor luctus placerat magna ligula cursus and purus pretium</p>
+      </div>
+      <div>
+        <img src="assest/featrue card/img-08.png" alt="" class="px-10 py-20">
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <div class="grid grid-cols-2">
+      <div>
+        <img src="assest/featrue card/img-07.png" alt="" class="px-10 py-20">
+      </div>
+      <div class="flex flex-col gap-8 px-20 justify-center">
+        <h5 class="text-lg text-gray-500 font-semibold">Strategies That Work</h5>
+        <h2  class="text-5xl font-bold">Right strategies & implementations</h2>
+        <p class="text-lg text-gray-500">Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit</p>
+        <p class="text-lg text-gray-500">Nemo ipsam egestas volute turpis egestas ipsum and purus sapien ultrice an aliquam quaerat ipsum augue turpis sapien cursus congue magna purus quaerat at ligula purus egestas magna cursus undo varius purus magnis sapien quaerat</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20 relative">
+    <div class="text-center w-2/3 mx-auto">
+      <h3 class="text-6xl text-gray-700 font-bold">
+        Here’s what our amazing clients are saying
+      </h3>
+      <h5 class="mt-8 text-2xl text-gray-500">
+        Ligula risus auctor tempus magna feugiat lacinia.
+      </h5>
+    </div>
+    <div class="relative mt-16">
+      <div class="pointer-events-none absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[92%] md:w-5/6 lg:w-2/3 h-[60%] bg-gray-100 rounded-2xl z-0"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
+      <div class="bg-white rounded-2xl shadow-md p-10 relative overflow-hidden">
+        <div class="absolute -top-6 -left-2 text-[120px] leading-none text-gray-100 select-none">“</div>
+        <p class="text-lg text-gray-500 leading-relaxed mt-4">
+          Quaerat sodales sapien euismod blandit aliquet ipsum primis undo and cubilia laoreet augue and luctus magna dolor luctus egestas sapien vitae
+        </p>
+        <div class="mt-10 flex items-center gap-4">
+          <img src="assest/carousal/review-author-1.jpg" alt="Scott Boxer" class="w-14 h-14 rounded-full object-cover">
+          <div class="leading-tight">
+            <h4 class="text-xl font-semibold text-gray-800">Scott Boxer</h4>
+            <p class="text-gray-400">@scott_boxer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-10 relative overflow-hidden">
+        <div class="absolute -top-6 -left-2 text-[120px] leading-none text-gray-100 select-none">“</div>
+        <p class="text-lg text-gray-500 leading-relaxed mt-4">
+          At sagittis congue augue and magna ipsum vitae a purus ipsum primis diam a cubilia laoreet augue egestas luctus a donec vitae ultrice ligula magna suscipit lectus gestas augue into cubilia
+        </p>
+        <div class="mt-10 flex items-center gap-4">
+          <img src="assest/carousal/review-author-2.jpg" alt="Joel Peterson" class="w-14 h-14 rounded-full object-cover">
+          <div class="leading-tight">
+            <h4 class="text-xl font-semibold text-gray-800">Joel Peterson</h4>
+            <p class="text-gray-400">Internet Surfer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-10 relative overflow-hidden">
+        <div class="absolute -top-6 -left-2 text-[120px] leading-none text-gray-100 select-none">“</div>
+        <p class="text-lg text-gray-500 leading-relaxed mt-4">
+          An augue cubilia laoreet magna suscipit egestas and ipsum a lectus purus ipsum primis and augue ultrice ligula and egestas a suscipit lectus gestas undo auctor tempus feugiat impedit quaerat
+        </p>
+        <div class="mt-10 flex items-center gap-4">
+          <img src="assest/carousal/review-author-5.jpg" alt="Jennifer Harper" class="w-14 h-14 rounded-full object-cover">
+          <div class="leading-tight">
+            <h4 class="text-xl font-semibold text-gray-800">Jennifer Harper</h4>
+            <p class="text-gray-400">App Developer</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-md p-10 relative overflow-hidden">
+        <div class="absolute -top-6 -left-2 text-[120px] leading-none text-gray-100 select-none">“</div>
+        <p class="text-lg text-gray-500 leading-relaxed mt-4">
+          Augue at vitae purus tempus egestas volutpat augue undo cubilia laoreet magna suscipit luctus dolor blandit at purus tempus feugiat impedit
+        </p>
+        <div class="mt-10 flex items-center gap-4">
+          <img src="assest/carousal/review-author-8.jpg" alt="Evelyn Martinez" class="w-14 h-14 rounded-full object-cover">
+          <div class="leading-tight">
+            <h4 class="text-xl font-semibold text-gray-800">Evelyn Martinez</h4>
+            <p class="text-gray-400">WordPress Consultant</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <h4 class="text-center text-gray-500 text-2xl font-bold mb-12">
+      Our clients love us as much as we love them
+    </h4>
+    <div class="max-w-5xl mx-auto grid grid-cols-3 gap-10 items-center text-center">
+      <div class="flex flex-col items-center gap-4">
+        <img alt="brand-21" src="assest/featrue card/brand-21.png" class="h-10 object-contain">
+        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-gray-600 text-sm font-semibold">4.7/5</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <img alt="brand-22" src="assest/featrue card/brand-22.png" class="h-10 object-contain">
+        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-gray-600 text-sm font-semibold">4.95/5</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <img alt="brand-23" src="assest/featrue card/brand-23.png" class="h-10 object-contain">
+        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+          <span class="text-yellow-400">★★★★★</span>
+          <span class="text-gray-600 text-sm font-semibold">4.24/5</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <div class="grid grid-cols-2 bg-gray-100 rounded-xl">
+      <div class="flex flex-col gap-8 px-20 justify-center">
+        <h5 class="text-lg text-gray-500 font-semibold">One-Stop Solution</h5>
+        <h2  class="text-5xl font-bold">Data-driven digital marketing</h2>
+        <ul class="list-disc list-inside text-gray-500 text-xl">
+          <li>Tempor sapien quaerat undo ipsum laoreet purus and sapien dolor ociis ultrice ipsum aliquam undo congue dolor cursus congue varius magnis</li>
+          <li>Cursus purus suscipit vitae cubilia magnis diam volute egestas sapien ultrice auctor</li>
+        </ul>
+      </div>
+      <div>
+        <img src="assest/featrue card/img-14.png" alt="" class="px-10 py-20">
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <div class="text-center w-2/3 mx-auto">
+      <h2 class="text-6xl text-gray-700 font-bold">
+        Articles & Resources
+      </h2>
+      <h5 class="mt-8 text-2xl text-gray-500">
+        Ligula risus auctor tempus magna feugiat lacinia.
+      </h5>
+    </div>
+    <div class="grid grid-cols-3 gap-10 mt-20">
+      <div class="flex flex-col gap-4">
+        <img src="assest/featrue card/post-8-img.jpg" alt="" class="rounded-2xl">
+        <h5 class="text-lg text-pink-500 font-semibold">Product News</h5>
+        <h3  class="text-2xl font-semibold">Aliqum mullam porta blandit: tempor sapien and gravida</h3>
+        <p class="text-lg text-gray-500">Egestas luctus vitae augue and ipsum ultrice quisque in cursus lacus feugiat congue diam ultrice laoreet sagittis</p>
+        <span><strong>By Helen J.</strong> | Apr 28, 2023</span>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="assest/featrue card/post-2-img.jpg" alt="" class="rounded-2xl">
+        <h5 class="text-lg text-green-500 font-semibold">Community</h5>
+        <h3  class="text-2xl font-semibold">Porttitor cursus fusce egestas CEO cursus at magna sapien suscipit and egestas ipsum</h3>
+        <p class="text-lg text-gray-500">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
+        <span><strong>By Martex Team</strong> | Apr 14, 2023</span>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="assest/featrue card/post-5-img.jpg" alt="" class="rounded-2xl">
+        <h5 class="text-lg text-blue-500 font-semibold">Freelancer Tips</h5>
+        <h3  class="text-2xl font-semibold">Cubilia laoreet augue egestas and Martex magna impedit</h3>
+        <p class="text-lg text-gray-500">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
+        <span><strong>By Miranda Green</strong> | Mar 27, 2023</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <div class="flex flex-col md:flex-row md:items-end gap-6">  
+      <label for="email" class="text-4xl text-gray-700 font-bold md:w-1/2">
+        Stay up to date with our news, ideas and updates
+      </label>
+      <div class="md:flex-1">
+        <div class="flex items-end gap-4">
+        <input
+          type="email"
+          id="newsletterEmail"
+          placeholder="Your Email Address"
+          class="flex-1 bg-gray-100 rounded-lg border px-5 py-4 text-xl text-gray-800"
+        />
+        <button id="newsletterSubscribeBtn" type="button" class="text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition px-6 py-4 whitespace-nowrap">
+          Subscribe Now
+        </button>
+        </div>
+        <p id="newsletterStatus" class="mt-3 text-lg text-blue-600 hidden">Submitting...</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="m-20">
+    <div class="flex space-x-24">
+      <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-pink.png"
+            alt="Martex Logo"
+            class="h-8 object-contain">
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Company</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>About Us</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Careers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Our Blog</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Product</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Integration</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Customers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Pricing</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Help Center</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Legal</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Terms of Use</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Privacy Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Cookie Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Site Map</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">  
+        <label for="email" class="block text-xl font-bold">
+          Connect With Us
+        </label>
+        <div>
+          <span class="list-none text-gray-500 text-xl">hello@yourdomain.com</span>
+          <div class="flex gap-6 text-2xl text-gray-600 mt-6">
+            <a href="#" class="hover:text-blue-600 transition">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+    
+            <a href="#" class="hover:text-pink-500 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+    
+            <a href="#" class="hover:text-red-600 transition">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+    
+            <a href="#" class="hover:text-black transition">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between mt-20 overline">
+      <div>
+        <h5 class="text-gray-500">© 2025 Martex. All Rights Reserved</h5>
+      </div>
+      <div>
+        <span class="text-gray-500">Made by Himanshu Pandey</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+    menuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-white", "shadow-md");
+      } else {
+        navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+
+    const logo = document.querySelector("#navbar img");
+    const navbarLogoDefaultSrc = logo?.getAttribute("src");
+    window.addEventListener("scroll", function () {
+      if (navbarLogoDefaultSrc) logo.src = navbarLogoDefaultSrc;
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    const section = document.getElementById('stats-section');
+    let started = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !started) {
+        startCounters();
+        started = true;
+      }
+    }, { threshold: 0.4 });
+    observer.observe(section);
+    function startCounters() {
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = counter.hasAttribute('data-decimal');
+        const duration = 1500;
+        let start = 0;
+        const startTime = performance.now();
+        function updateCounter(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          let value = progress * target;
+          if (isDecimal) {
+            counter.textContent = value.toFixed(2);
+          } else {
+            counter.textContent = Math.floor(value).toLocaleString();
+          }
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = isDecimal 
+              ? target.toFixed(2) 
+              : target.toLocaleString();
+          }
+        }
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    const newsletterSubscribeBtn = document.getElementById("newsletterSubscribeBtn");
+    const newsletterStatus = document.getElementById("newsletterStatus");
+
+    newsletterSubscribeBtn?.addEventListener("click", () => {
+      if (!newsletterStatus) return;
+      newsletterStatus.classList.remove("hidden");
+      newsletterStatus.textContent = "Submitting...";
+    });
+  </script>
+</body>
+</html>

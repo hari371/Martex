@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martex Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .carousel-track {
+      animation: scroll 25s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    .customers-grid > div {
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .customers-grid > div:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</head>
+
+<body class="bg-gray-100">
+  <section class="bg-purple-900 text-white">
+    <div>
+      <div class="flex flex-col justify-center items-center text-center gap-10">
+        <h1 class="text-7xl font-bold text-white w-1/2 mt-24">
+          It’s time to show how creative you are
+        </h1>
+        <p class="text-xl text-white font-semibold w-1/2 mt-2">
+          A great collection of Modern Framework Tailwind CSS template to promote your Software, App, SaaS, Startup or business projects
+        </p>
+        <div>
+          <button class="px-6 py-3 bg-pink-500 border border-transparent hover:bg-transparent hover:border-white text-white rounded-md font-medium transition">
+            Check Demos
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://martex-tailwindcss.ibthemespro.com/images/hero-img.png"
+          alt="Hero Image"
+          class="w-full">
+    </div>
+  </section>
+
+  <section class="m-24">
+    <div class="flex justify-center gap-16 max-w-6xl mx-auto">
+      <div class="flex flex-col items-center text-center max-w-sm ">
+        <div class="bg-gray-100 p-8 rounded-2xl flex justify-center">
+          <img alt="Intuitive Dashboard" src="https://martex-tailwindcss.ibthemespro.com/images/f_01.png" class="w-72">
+        </div>
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl font-semibold mt-6 font-bold text-gray-800 leading-tight">
+            Ultra Responsive
+          </h2>
+          <h4 class="text-xl text-gray-500 mt-4 bg-transparent leading-tight my-10">
+            Martex has a fully responsive design. It fits perfectly on various displays and resolutions
+          </h4>
+        </div>
+      </div>
+      <div class="flex flex-col items-center text-center max-w-sm">
+        <div class="bg-gray-100 p-8 rounded-2xl flex justify-center">
+          <img alt="Effortless Integration" src="https://martex-tailwindcss.ibthemespro.com/images/f_02.png" class="w-72">
+        </div>
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl font-semibold mt-6 font-bold text-gray-800 leading-tight">
+            Built with Tailwind CSS v3.x
+          </h2>
+          <h4 class="text-xl text-gray-500 mt-4 bg-transparent leading-tight my-10">
+            The world’s most popular front-end open source toolkit for building responsive websites
+          </h4>
+        </div>
+      </div>
+      <div class="flex flex-col items-center text-center max-w-sm">
+        <div class="bg-gray-100 p-8 rounded-2xl flex justify-center">
+          <img alt="Engagement Analysis" src="https://martex-tailwindcss.ibthemespro.com/images/f_03.png" class="w-72">
+        </div>
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-2xl font-semibold mt-6 font-bold text-gray-800 leading-tight">
+            Beautiful Components
+          </h2>
+          <h4 class="text-xl text-gray-500 mt-4 bg-transparent leading-tight my-10">
+            Martex includes well designed components which always gives you best results as you wanted
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center text-center">
+      <h1 class="text-7xl font-bold text-gray-700 w-1/2 mt-24">
+        Stunning Designs
+      </h1>
+      <p class="text-xl text-gray-500 font-semibold w-1/2 mt-4">
+        27 beautiful, hand-crafted designs to get you started. Choose the one you like best and start customize it to your website
+      </p>
+    </div>
+
+    <div class="customers-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-01.jpg" alt="Demo 1" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #1</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-02.jpg" alt="Demo 2" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #2</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-03.jpg" alt="Demo 3" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #3</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-04.jpg" alt="Demo 4" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #4</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-05.jpg" alt="Demo 5" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #5</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-06.jpg" alt="Demo 6" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #6</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-07.jpg" alt="Demo 7" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #7</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-08.jpg" alt="Demo 8" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #8</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-09.jpg" alt="Demo 9" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #9</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-10.jpg" alt="Demo 10" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #10</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-11.jpg" alt="Demo 11" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #11</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-12.jpg" alt="Demo 12" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #12</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-13.jpg" alt="Demo 13" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #13</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-14.jpg" alt="Demo 14" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #14</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-15.jpg" alt="Demo 15" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #15</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-16.jpg" alt="Demo 16" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #16</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-17.jpg" alt="Demo 17" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #17</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-18.jpg" alt="Demo 18" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #18</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-19.jpg" alt="Demo 19" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #19</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-20.jpg" alt="Demo 20" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #20</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-21.jpg" alt="Demo 21" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #21</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-22.jpg" alt="Demo 22" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #22</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-23.jpg" alt="Demo 23" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #23</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-24.jpg" alt="Demo 24" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #24</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-25.jpg" alt="Demo 25" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #25</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-26.jpg" alt="Demo 26" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #26</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/layout-27.jpg" alt="Demo 27" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Demo #27</h5>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-20 bg-purple-900 text-white">
+    <div class="grid grid-cols-2 rounded-xl">
+      <div class="flex flex-col gap-8 justify-center items-center">
+        <h2  class="text-6xl font-bold">Fully Responsive & Retina Ready</h2>
+        <p class="text-2xl">Attention to details is what makes the Martex fully fuctional. No matter what kind of content you add, your website will look stunning on any major device such as tablet, smartphone etc.</p>
+        <button class="px-6 py-3 self-start bg-pink-500 border border-transparent hover:border-white hover:bg-transparent text-white rounded-md font-medium transition">
+          See Martex In Action
+        </button>
+      </div>
+      <div>
+        <img src="assest/featrue card/banner-1-img.png" alt="" class="">
+      </div>
+    </div>
+  </section>
+
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center text-center">
+      <h1 class="text-7xl font-bold text-gray-700 mt-24">
+        Practical Inner Pages
+      </h1>
+      <p class="text-xl text-gray-500 font-semibold w-1/2 mt-8">
+        Martex offers a vast number of pre-made inner pages which will save your time when building a website.
+      </p>
+    </div>
+
+    <div class="customers-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/about.jpg" alt="About Us" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">About Us</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/careers.jpg" alt="Careers" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Careers</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/career-role.jpg" alt="Careers Role" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Careers Role</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/team.jpg" alt="teams" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Teams</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/features.jpg" alt="features" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Features</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/integrations.jpg" alt="integrations" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Integrations</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/projects.jpg" alt="projects" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Projects</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/project-details.jpg" alt="project-details" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Project Details</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/reviews.jpg" alt="reviews" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Reviews</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/pricing-1.jpg" alt="pricing-1" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Pricing 1</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/pricing-2.jpg" alt="pricing-2" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Pricing 2</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/download.jpg" alt="download" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Download</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/faqs.jpg" alt="faqs" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">FaQs</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/help-center.jpg" alt="help-center" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Help Center</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/contacts.jpg" alt="contacts" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Contacts</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/blog-listing.jpg" alt="blog-listing" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Blog Listing</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/single-post.jpg" alt="single-post" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Single Post</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/404.jpg" alt="404" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">404</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/terms.jpg" alt="terms" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Terms</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/privacy.jpg" alt="privacy" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Privacy</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/cookies.jpg" alt="cookies" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Cookies</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/login-1.jpg" alt="login-1" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Login 1</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/login-2.jpg" alt="login-2" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Login 2</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/signup-1.jpg" alt="signup-1" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Signup 1</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/signup-2.jpg" alt="signup-2" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Signup 2</h5>
+      </div>
+      <div class="flex flex-col gap-4">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/reset-password.jpg" alt="reset-password" class="rounded-2xl">
+        <h5 class="text-3xl text-gray-700 font-semibold">Reset Password</h5>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-purple-900 p-20">
+    <div>
+      <div class="flex flex-col justify-center items-center text-center gap-10">
+        <h1 class="text-7xl font-bold text-white w-1/2">
+          Create your amazing website with Martex
+        </h1>
+        <p class="text-xl text-white font-semibold w-1/2">
+          Mix and match from over 50 exclusive section UI blocks. Create something unique and beautifully tailored to your needs
+        </p>
+        <div>
+          <button class="px-6 py-3 bg-pink-500 border border-transparent hover:bg-transparent hover:border-white text-white rounded-md font-medium transition">
+            Purchace Martex
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="m-20">
+    <div class="flex flex-col justify-center items-center">
+      <p class="text-gray-500 text-xl">Designed by elite-themes24</p>
+      <p class="text-gray-500 text-xl">© 2025 Martex. All Rights Reserved</p>
+    </div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+    menuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-white", "shadow-md");
+      } else {
+        navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+
+    const logo = document.querySelector("#navbar img");
+    const navbarLogoDefaultSrc = logo?.getAttribute("src");
+    window.addEventListener("scroll", function () {
+      if (navbarLogoDefaultSrc) logo.src = navbarLogoDefaultSrc;
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    const section = document.getElementById('stats-section');
+    let started = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !started) {
+        startCounters();
+        started = true;
+      }
+    }, { threshold: 0.4 });
+    observer.observe(section);
+    function startCounters() {
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = counter.hasAttribute('data-decimal');
+        const duration = 1500;
+        let start = 0;
+        const startTime = performance.now();
+        function updateCounter(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          let value = progress * target;
+          if (isDecimal) {
+            counter.textContent = value.toFixed(2);
+          } else {
+            counter.textContent = Math.floor(value).toLocaleString();
+          }
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = isDecimal 
+              ? target.toFixed(2) 
+              : target.toLocaleString();
+          }
+        }
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    const newsletterSubscribeBtn = document.getElementById("newsletterSubscribeBtn");
+    const newsletterStatus = document.getElementById("newsletterStatus");
+
+    newsletterSubscribeBtn?.addEventListener("click", () => {
+      if (!newsletterStatus) return;
+      newsletterStatus.classList.remove("hidden");
+      newsletterStatus.textContent = "Submitting...";
+    });
+  </script>
+</body>
+</html>
+  

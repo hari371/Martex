@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martex Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .carousel-track {
+      animation: scroll 25s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</head>
+
+<body class="bg-gray-100">
+  <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-white transition-all duration-300 z-50">
+    <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png" alt="Martex Logo" class="h-8 object-contain">
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-lg text-gray-600 font-medium">
+        <div class="relative group">
+          <button class="flex items-center gap-2 hover:text-blue-600 transition duration-200">
+            Company
+            <span class="text-xs opacity-70">▼</span>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 p-2">
+            <a href="./aboutUs.html" class="block px-4 py-2 rounded-lg hover:bg-gray-50">About Us</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Careers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Customers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Our Blog</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Contact Us</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-blue-600 transition duration-200">Case Studies</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">Pricing</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">FAQs</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" class="font-medium text-gray-800 hover:text-blue-600 transition">Sign In</a>
+        <a href="#" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+          Get Started
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18"></path>
+          <path d="M3 12h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col gap-2 py-4 px-6 text-gray-800 font-medium z-40">
+    <details class="group">
+      <summary class="cursor-pointer flex items-center justify-between py-3">
+        <span>Company</span>
+        <span class="text-xs opacity-70 group-open:rotate-180 transition">▼</span>
+      </summary>
+      <div class="pb-3 flex flex-col">
+        <a href="./aboutUs.html" class="py-2 text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Careers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Customers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Our Blog</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Contact Us</a>
+      </div>
+    </details>
+    <a href="#" class="py-3 hover:text-blue-600">Case Studies</a>
+    <a href="#" class="py-3 hover:text-blue-600">Pricing</a>
+    <a href="#" class="py-3 hover:text-blue-600">FAQs</a>
+    <div class="pt-3 flex items-center gap-4">
+      <a href="#" class="font-medium hover:text-blue-600 transition">Sign In</a>
+      <a href="#" class="ml-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+        Get Started
+      </a>
+    </div>
+  </div>
+
+  <div id="pricingPagePopUp" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center hidden">
+    <div class="bg-white rounded-2xl shadow-2xl relative flex flex-col w-1/3 overflow-hidden">
+      <button id="closePopup"
+        class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600">
+        ✕
+      </button>
+      <div class="bg-blue-100">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/modal-newsletter-blue.jpg"
+             alt="newsletter"
+             class="">
+      </div>
+      <div class="p-6 text-center flex flex-col gap-4">
+        <h2 class="text-2xl font-bold text-gray-700 leading-snug">
+          Stay up to date with our <br>
+          news, ideas and updates
+        </h2>
+        <input type="email"
+          placeholder="Your email address"
+          class="w-full px-4 py-3 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition">
+          Subscribe Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center py-20 gap-8">
+        <h2 class="text-6xl text-gray-700 font-bold">Simple, Flexible Pricing</h2>
+        <div class="bg-gray-200 p-1 rounded-full flex">
+            <button id="monthlyBtn"
+              class="px-6 py-2 rounded-full bg-blue-500 text-white font-semibold transition-all duration-300">
+              Billed monthly
+            </button> 
+            <button id="yearlyBtn"
+              class="px-6 py-2 rounded-full text-gray-700 font-semibold transition-all duration-300">
+              Billed yearly
+            </button>   
+          </div>
+        <span class="text-blue-500 text-xl">Save up to 35% with yearly billing</span>
+    </div>
+    <div class="grid grid-cols-3 gap-6" >
+        <div class="flex flex-col  px-8 py-10 bg-white rounded-2xl shadow-lg gap-4">
+            <h3 class="text-4xl text-gray-700 font-semibold ">Starter</h3>
+            <div class="flex items-baseline">
+                <span class="text-4xl text-gray-700 font-semibold">$</span>
+                <span class="text-5xl text-gray-700 font-semibold"> 0</span>
+                <span class="text-2xl text-gray-500">/ forever</span>
+            </div>
+            <p class="text-xl text-gray-500">For professionals getting started with smaller projects.</p>
+            <div class="flex flex-col items-center gap-4">
+                <button class="flex text-white text-xl font-semibold bg-blue-500 px-20 py-4 rounded-md  hover:bg-blue-700 transition duration-300 ease-in-out">
+                    Get Started - It's Free
+                </button>
+                <span class="text-xl text-gray-500">No credit card required</span>
+            </div>
+            <ul class="flex flex-col gap-4 text-lg list-none">
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                      2 free projects                      
+                </li>
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    1 GB of cloud storage                          
+                </li>
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    For personal use                      
+                </li>
+                <li class="flex text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Weekly data backup                           
+                </li>
+                <li class="flex text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    No Ads. No trackers                       
+                </li>
+                <li class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    12/5 email support                       
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col  px-8 py-10 bg-white rounded-2xl shadow-lg gap-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-4xl text-gray-700 font-semibold">Basic</h3>                
+                <span class="saleBadge hidden bg-yellow-400 text-gray-700 text-xl font-semibold px-3 py-1 rounded-full">
+                    Save 30%
+                </span>
+            </div>
+            <div class="flex items-baseline">
+                <span class="text-4xl text-gray-700 font-semibold">$ </span>
+                <span id="basicPrice" class="text-5xl text-gray-700 font-semibold">16.99 </span>
+                <span id="basicDuration" class="text-2xl text-gray-500">/ mo</span>
+            </div>
+            <p class="text-xl text-gray-500">For personal use or small teams with simple workflows.</p>
+            <div class="flex flex-col items-center gap-4">
+                <button class="flex text-white text-xl font-semibold bg-blue-500 px-20 py-4 rounded-md  hover:bg-blue-700 transition duration-300 ease-in-out">
+                    Start 14 - Days Trial        
+                </button>
+                <span class="text-xl text-gray-500">7-Day Money Back Guarantee</span>
+            </div>
+            <ul class="text-gray-700 text-lg list-none">
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Up to 250 projects                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    15 GB of Cloud Storage                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Shared team workspace                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Daily data backup                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    No Ads. No trackers                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    12/7 email support                        
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col  px-8 py-10 bg-white rounded-2xl shadow-lg gap-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-4xl text-gray-700 font-semibold">Advanced</h3>                
+                <span class="saleBadge hidden bg-yellow-400 text-gray-700 text-xl font-semibold px-3 py-1 rounded-full">
+                    Save 35%
+                </span>
+            </div>
+            <div class="flex items-baseline">
+                <span class="text-4xl text-gray-700 font-semibold">$</span>
+                <span id="advancedPrice" class="text-5xl text-gray-700 font-semibold">24.99</span>
+                <span id="advancedDuration" class="text-2xl text-gray-500">/ mo</span>
+            </div>
+            <p class="text-xl text-gray-500">For growing teams that need more services and flexibility.</p>
+            <div class="flex flex-col items-center gap-4">
+                <button class="flex text-white text-xl font-semibold bg-blue-500 px-20 py-4 rounded-md  hover:bg-blue-700 transition duration-300 ease-in-out">
+                    Upgrade Your Plan        
+                </button>
+                <span class="text-xl text-gray-500">7-Day Money Back Guarantee</span>
+            </div>
+            <ul class="text-gray-700 text-lg list-none">
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Everything in Basic                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Private cloud hosting                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Custom security                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Advanced user permissions                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    Multi-team management                        
+                </li>
+                <li class="flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                    </svg>
+                    24/7 Email Support                        
+                </li>
+            </ul>
+        </div>
+    </div>
+  </section>
+
+  <section class="m-24">
+    <div class="text-center max-w-2xl mx-auto">
+      <h4 class="text-2xl font-bold text-gray-700 bg-transparent leading-tight pt-10">
+        Trusted and used by over 3,400 companies
+      </h4>
+    </div>
+    <div class="overflow-hidden flex items-center my-10 mx-20">
+      <div class="flex items-center bg-transparent w-max gap-8 carousel-track carousel-track:hover">
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-1.png" alt="HOSTING"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-2.png" alt="BD ARCHITECT"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-3.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-4.png" alt="INTDECO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-5.png" alt="SPARK"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-6.png" alt="MOUNTAIN"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-7.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-8.png" alt="PEGASUS"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-9.png" alt="FACTORY"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-10.png" alt="MONEY TALKS"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-1.png" alt="HOSTING"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-2.png" alt="BD ARCHITECT"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-3.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-4.png" alt="INTDECO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-5.png" alt="SPARK"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-6.png" alt="MOUNTAIN"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-7.png" alt="LOREM LOGO"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-8.png" alt="PEGASUS"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-9.png" alt="FACTORY"/>
+        <img class="shrink-0 h-24 object-contain transition-transform duration-300 hover:scale-110" src="https://martex-tailwindcss.ibthemespro.com/images/brand-10.png" alt="MONEY TALKS"/>   
+      </div>
+    </div>
+  </section>
+
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center gap-8">
+        <h2 class="text-6xl text-gray-700 font-bold">
+            Compare Our Plans
+        </h2>
+        <h5 class="text-xl text-gray-500 font-semibold">
+            Complete list of features available in our pricing plans
+        </h5>
+    </div>
+    <table class="w-full border-collapse mt-16">
+      <thead>
+        <tr class="text-gray-700 text-2xl font-semibold border-b">
+          <th class="text-left py-4 w-1/3"></th>
+          <th class="py-4">Starter</th>
+          <th class="py-4">Basic</th>
+          <th class="py-4">Premium</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700 text-xl font-semibold">
+        <tr class="border-b">
+          <td class="py-4">Available Projects</td>
+          <td class="text-center">Up to 2</td>
+          <td class="text-center">Up to 250</td>
+          <td class="text-center">Unlimited</td>
+        </tr>
+  
+        <tr class="border-b">
+          <td class="py-4">Available Storage</td>
+          <td class="text-center">2GB</td>
+          <td class="text-center">50GB</td>
+          <td class="text-center">350GB</td>
+        </tr>
+  
+        <tr class="border-b">
+          <td class="py-4">Private Cloud Hosting</td>
+          <td class="text-center text-gray-500">✕</td>
+          <td class="text-center text-gray-500">✕</td>
+          <td class="text-center text-blue-500">✔</td>
+        </tr>
+  
+        <tr class="border-b">
+          <td class="py-4">User Permissions</td>
+          <td class="text-center text-blue-500">✔</td>
+          <td class="text-center text-blue-500">✔</td>
+          <td class="text-center text-blue-500">✔</td>
+        </tr>
+  
+        <tr class="border-b">
+          <td class="py-4">Direct Integrations</td>
+          <td class="text-center text-blue-500">✔</td>
+          <td class="text-center text-blue-500">✔</td>
+          <td class="text-center text-blue-500">✔</td>
+        </tr>
+  
+        <tr class="border-b">
+          <td class="py-4">Reusable Components</td>
+          <td class="text-center text-gray-500">✕</td>
+          <td class="text-center text-blue-500">✔</td>
+          <td class="text-center text-blue-500">✔</td>
+        </tr>
+  
+        <tr class="border-b">
+          <td class="py-4">Data Backup</td>
+          <td class="text-center">Weekly</td>
+          <td class="text-center">Daily</td>
+          <td class="text-center">Daily</td>
+        </tr>  
+
+        <tr class="border-b">
+            <td class="py-4">No Ads. No Trackers</td>
+            <td class="text-center text-gray-500">✕</td>
+            <td class="text-center text-blue-500">✔</td>
+            <td class="text-center text-blue-500">✔</td>
+        </tr>
+
+        <tr class="border-b">
+            <td class="py-4">Advanced Security</td>
+            <td class="text-center text-gray-500">✕</td>
+            <td class="text-center text-blue-500">✔</td>
+            <td class="text-center text-blue-500">✔</td>
+        </tr>
+
+        <tr class="border-b">
+            <td class="py-4">Shared Team Workspace</td>
+            <td class="text-center text-gray-500">✕</td>
+            <td class="text-center text-blue-500">✔</td>
+            <td class="text-center text-blue-500">✔</td>
+        </tr>
+
+        <tr class="border-b">
+            <td class="py-4">Team Management</td>
+            <td class="text-center text-gray-500">✕</td>
+            <td class="text-center text-gray-500">✕</td>
+            <td class="text-center text-blue-500">✔</td>
+        </tr>
+
+        <tr class="border-b">
+            <td class="py-4">Customer Support</td>
+            <td class="text-center">Limited</td>
+            <td class="text-center">Basic</td>
+            <td class="text-center">Priority</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="m-24">
+    <div class="flex text-center flex-col m-20">
+      <h2 class="text-7xl text-gray-700 font-semibold">Questions & Answers</h2>
+      <h5 class="text-2xl text-gray-500 pt-8">Ligula risus auctor tempus magna feugiat lacinia.</h5>
+    </div>
+    <div class="grid grid-cols-2 gap-6">
+      <div id="q1">
+        <h3 class="text-3xl font-semibold mb-4">1. Getting started with Martex</h3>
+        <p class=" text-xl text-gray-500">Etiam amet mauris suscipit in odio integer congue metus and vitae arcu mollis blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus blandit and laoreet</p>
+      </div>
+
+      <div id="q2">
+        <h3 class="text-3xl font-semibold mb-4">2. What's inside the package?</h3>
+        <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
+      </div>
+
+      <div id="q3">
+        <h3 class="text-3xl font-semibold mb-4">3. How do I choose a plan?</h3>
+        <ul class="list-disc">
+          <li class=" text-xl text-gray-500">Fringilla risus, luctus mauris orci auctor purus ligula euismod pretium purus pretium rutrum tempor sapien</li>
+          <li class=" text-xl text-gray-500">Nemo ipsam egestas volute undo turpis purus lipsum primis aliquam sapien quaerat sodales pretium a purus</li>
+        </ul>
+      </div>
+
+      <div id="q4">
+        <h3 class="text-3xl font-semibold mb-4">4. How does Martex handle my privacy?</h3>
+        <p class=" text-xl text-gray-500">Quaerat sodales sapien euismod blandit purus a purus ipsum primis in cubilia laoreet augue luctus dolor luctus</p>
+        <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec congue metus. Vitae arcu mollis blandit integer nemo volute velna</p>
+      </div>
+
+      <div id="q5">
+        <h3 class="text-3xl font-semibold mb-4">5. I have an issue with my account</h3>
+        <p class=" text-xl text-gray-500">Cubilia laoreet augue egestas and luctus donec curabite diam vitae dapibus libero and quisque gravida donec neque blandit justo aliquam molestie nunc sapien justo</p>
+      </div>
+
+      <div id="q6">
+        <h3 class="text-3xl font-semibold mb-4">6. Can I cancel at anytime?</h3>
+        <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
+      </div>
+    </div>
+    <div class="flex justify-center mt-20">
+      <div class="inline-flex items-center gap-2 bg-gray-100 px-12 py-5 rounded-full">
+        <span class="text-xl text-gray-500">Have any questions?</span>
+          <a href="#" class="text-xl font-semibold text-pink-500 underline">
+            Get in Touch
+          </a>
+        </div>
+    </div>
+  </section>
+
+  <section class="m-24 bg-purple-900">
+    <div class="py-20">
+      <div class="flex flex-col justify-center items-center text-center gap-10">
+        <h1 class="text-6xl font-bold text-white">
+            Give it a try, it's free!
+        </h1>
+        <p class="text-xl text-white font-semibold">
+            It only takes a few clicks to get started
+        </p>
+        <div>
+          <button class="px-6 py-3 bg-pink-500 border border-transparent hover:bg-transparent hover:border-white text-white rounded-md font-medium transition">
+            Get Started - It's Free
+          </button>
+        </div>
+        <p class="text-xl text-white inline-flex"> 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>              
+            Free for 14 days, no credit card required.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="m-20">
+    <div class="flex space-x-24">
+      <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png"
+            alt="Martex Logo"
+            class="h-8 object-contain">
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Company</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>About Us</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Careers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Our Blog</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Product</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Integration</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Customers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Pricing</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Help Center</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Legal</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Terms of Use</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Privacy Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Cookie Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Site Map</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">  
+        <label for="email" class="block text-xl font-bold">
+          Connect With Us
+        </label>
+        <div>
+          <span class="list-none text-gray-500 text-xl">hello@yourdomain.com</span>
+          <div class="flex gap-6 text-2xl text-gray-600 mt-6">
+            <a href="#" class="hover:text-blue-600 transition">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+    
+            <a href="#" class="hover:text-pink-500 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+    
+            <a href="#" class="hover:text-red-600 transition">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+    
+            <a href="#" class="hover:text-gray-700 transition">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between mt-20 overline">
+      <div>
+        <h5 class="text-gray-500">© 2025 Martex. All Rights Reserved</h5>
+      </div>
+      <div>
+        <span class="text-gray-500">Made by Himanshu Pandey</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+    menuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-white", "shadow-md");
+      } else {
+        navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+
+    const logo = document.querySelector("#navbar img");
+    const navbarLogoDefaultSrc = logo?.getAttribute("src");
+    window.addEventListener("scroll", function () {
+      if (navbarLogoDefaultSrc) logo.src = navbarLogoDefaultSrc;
+    });
+
+    const pricingPagePopUp = document.getElementById("pricingPagePopUp");
+    const closeBtn = document.getElementById("closePopup");
+    const isPricingPage =
+      window.location.pathname === "/" ||
+      window.location.pathname.includes("pricing.html");
+
+    if (isPricingPage) {
+      setTimeout(() => {
+        pricingPagePopUp.classList.remove("hidden");
+      }, 3000);
+    }
+
+    closeBtn.addEventListener("click", () => {
+      pricingPagePopUp.classList.add("hidden");
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    const section = document.getElementById('stats-section');
+    let started = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !started) {
+        startCounters();
+        started = true;
+      }
+    }, { threshold: 0.4 });
+    if (section) {
+        observer.observe(section);
+    }
+
+    function startCounters() {
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = counter.hasAttribute('data-decimal');
+        const duration = 1500;
+        let start = 0;
+        const startTime = performance.now();
+        function updateCounter(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          let value = progress * target;
+          if (isDecimal) {
+            counter.textContent = value.toFixed(2);
+          } else {
+            counter.textContent = Math.floor(value).toLocaleString();
+          }
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = isDecimal 
+              ? target.toFixed(2) 
+              : target.toLocaleString();
+          }
+        }
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    const newsletterSubscribeBtn = document.getElementById("newsletterSubscribeBtn");
+    const newsletterStatus = document.getElementById("newsletterStatus");
+    newsletterSubscribeBtn?.addEventListener("click", () => {
+      if (!newsletterStatus) return;
+      newsletterStatus.classList.remove("hidden");
+      newsletterStatus.textContent = "Submitting...";
+    });
+
+    const monthlyBtn = document.getElementById("monthlyBtn");
+    const yearlyBtn = document.getElementById("yearlyBtn");
+    monthlyBtn.addEventListener("click", () => {
+        monthlyBtn.classList.add("bg-blue-500", "text-white");
+        monthlyBtn.classList.remove("text-gray-700");
+
+        yearlyBtn.classList.remove("bg-blue-500", "text-white");
+        yearlyBtn.classList.add("text-gray-700");
+    });
+    yearlyBtn.addEventListener("click", () => {
+        yearlyBtn.classList.add("bg-blue-500", "text-white");
+        yearlyBtn.classList.remove("text-gray-700");
+
+        monthlyBtn.classList.remove("bg-blue-500", "text-white");
+        monthlyBtn.classList.add("text-gray-700");
+    });
+
+    const basicPlan = document.getElementById("basicPlan");
+    const basicPrice = document.getElementById("basicPrice");
+    const basicDuration = document.getElementById("basicDuration");
+
+    const advancedPlan = document.getElementById("advancedPlan");
+    const advancedPrice = document.getElementById("advancedPrice");
+    const advancedDuration = document.getElementById("advancedDuration");
+
+    monthlyBtn.addEventListener("click", () => {
+        basicPrice.textContent = "16.99";
+        advancedPrice.textContent = "24.99";
+
+        basicDuration.textContent = "/ mo";
+        advancedDuration.textContent = "/ mo";
+    });
+
+    yearlyBtn.addEventListener("click", () => {
+        basicPrice.textContent = "142.75";
+        advancedPrice.textContent = "194.99";
+
+        basicDuration.textContent = "/ yr";
+        advancedDuration.textContent = "/ yr";
+    });
+
+    const badges = document.querySelectorAll(".saleBadge");
+    yearlyBtn.addEventListener("click", () => {
+        badges.forEach(b => b.classList.remove("hidden"));
+    });
+
+    monthlyBtn.addEventListener("click", () => {
+        badges.forEach(b => b.classList.add("hidden"));
+    });
+  </script>
+</body>
+</html>

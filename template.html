@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martex Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .carousel-track {
+      animation: scroll 25s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</head>
+
+<body>
+  <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-white transition-all duration-300 z-50">
+    <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png" alt="Martex Logo" class="h-8 object-contain">
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-lg text-gray-600 font-medium">
+        <div class="relative group">
+          <button class="flex items-center gap-2 hover:text-blue-600 transition duration-200">
+            Company
+            <span class="text-xs opacity-70">▼</span>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 p-2">
+            <a href="./aboutUs.html" class="block px-4 py-2 rounded-lg hover:bg-gray-50">About Us</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Careers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Customers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Our Blog</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Contact Us</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-blue-600 transition duration-200">Case Studies</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">Pricing</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">FAQs</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" class="font-medium text-gray-800 hover:text-blue-600 transition">Sign In</a>
+        <a href="#" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+          Get Started
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18"></path>
+          <path d="M3 12h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col gap-2 py-4 px-6 text-gray-800 font-medium z-40">
+    <details class="group">
+      <summary class="cursor-pointer flex items-center justify-between py-3">
+        <span>Company</span>
+        <span class="text-xs opacity-70 group-open:rotate-180 transition">▼</span>
+      </summary>
+      <div class="pb-3 flex flex-col">
+        <a href="./aboutUs.html" class="py-2 text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Careers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Customers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Our Blog</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Contact Us</a>
+      </div>
+    </details>
+    <a href="#" class="py-3 hover:text-blue-600">Case Studies</a>
+    <a href="#" class="py-3 hover:text-blue-600">Pricing</a>
+    <a href="#" class="py-3 hover:text-blue-600">FAQs</a>
+    <div class="pt-3 flex items-center gap-4">
+      <a href="#" class="font-medium hover:text-blue-600 transition">Sign In</a>
+      <a href="#" class="ml-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+        Get Started
+      </a>
+    </div>
+  </div>
+
+  <div id="popup" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-6 hidden">
+    <div class="relative">
+      <img alt="popup" src="https://martex-tailwindcss.ibthemespro.com/images/modal-2-img.jpg" class="max-w-3xl w-full rounded-xl shadow-2xl">
+      <button id="closePopup" class="absolute top-3 right-3 bg-white text-black w-8 h-8 rounded-full flex items-center justify-center">
+        ✕
+      </button>
+    </div>
+  </div>
+
+  <footer class="m-20">
+    <div class="flex space-x-24">
+      <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-pink.png"
+            alt="Martex Logo"
+            class="h-8 object-contain">
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Company</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>About Us</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Careers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Our Blog</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Product</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Integration</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Customers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Pricing</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Help Center</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Legal</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Terms of Use</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Privacy Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Cookie Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Site Map</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">  
+        <label for="email" class="block text-xl font-bold">
+          Connect With Us
+        </label>
+        <div>
+          <span class="list-none text-gray-500 text-xl">hello@yourdomain.com</span>
+          <div class="flex gap-6 text-2xl text-gray-600 mt-6">
+            <a href="#" class="hover:text-blue-600 transition">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+    
+            <a href="#" class="hover:text-pink-500 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+    
+            <a href="#" class="hover:text-red-600 transition">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+    
+            <a href="#" class="hover:text-black transition">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between mt-20 overline">
+      <div>
+        <h5 class="text-gray-500">© 2025 Martex. All Rights Reserved</h5>
+      </div>
+      <div>
+        <span class="text-gray-500">Made by Himanshu Pandey</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+    menuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-white", "shadow-md");
+      } else {
+        navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+
+    const logo = document.querySelector("#navbar img");
+    const navbarLogoDefaultSrc = logo?.getAttribute("src");
+    window.addEventListener("scroll", function () {
+      if (navbarLogoDefaultSrc) logo.src = navbarLogoDefaultSrc;
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    const section = document.getElementById('stats-section');
+    let started = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !started) {
+        startCounters();
+        started = true;
+      }
+    }, { threshold: 0.4 });
+    observer.observe(section);
+    function startCounters() {
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const isDecimal = counter.hasAttribute('data-decimal');
+        const duration = 1500;
+        let start = 0;
+        const startTime = performance.now();
+        function updateCounter(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          let value = progress * target;
+          if (isDecimal) {
+            counter.textContent = value.toFixed(2);
+          } else {
+            counter.textContent = Math.floor(value).toLocaleString();
+          }
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = isDecimal 
+              ? target.toFixed(2) 
+              : target.toLocaleString();
+          }
+        }
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    const newsletterSubscribeBtn = document.getElementById("newsletterSubscribeBtn");
+    const newsletterStatus = document.getElementById("newsletterStatus");
+
+    newsletterSubscribeBtn?.addEventListener("click", () => {
+      if (!newsletterStatus) return;
+      newsletterStatus.classList.remove("hidden");
+      newsletterStatus.textContent = "Submitting...";
+    });
+  </script>
+</body>
+</html>
+
+<ul class="list-none">
+  <li>
+      <details class="group">
+          <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+              
+              <span class="">
+                  <span class="group-open:hidden">+</span>
+                  <span class="hidden group-open:inline">−</span>
+              </span>
+          </summary>
+          <p class="pt-8 text-xl text-gray-500"></p>
+      </details>
+      <div class="w-full border border-gray-300 mt-6"></div>
+  </li>
+
+  <li>
+      <details class="group">
+          <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+              
+              <span class="">
+                  <span class="group-open:hidden">+</span>
+                  <span class="hidden group-open:inline">−</span>
+              </span>
+          </summary>
+          <p class="pt-8 text-xl text-gray-500"></p>
+      </details>
+      <div class="w-full border border-gray-300 mt-6"></div>
+  </li>
+
+  <li>
+      <details class="group">
+          <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+              
+              <span class="">
+                  <span class="group-open:hidden">+</span>
+                  <span class="hidden group-open:inline">−</span>
+              </span>
+          </summary>
+          <p class="pt-8 text-xl text-gray-500"></p>
+      </details>
+      <div class="w-full border border-gray-300 mt-6"></div>
+  </li>
+
+  <li>
+      <details class="group">
+          <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+              
+              <span class="">
+                  <span class="group-open:hidden">+</span>
+                  <span class="hidden group-open:inline">−</span>
+              </span>
+          </summary>
+          <p class="pt-8 text-xl text-gray-500"></p>
+      </details>
+      <div class="w-full border border-gray-300 mt-6"></div>
+  </li>
+
+  <li>
+      <details class="group">
+          <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+              
+              <span class="">
+                  <span class="group-open:hidden">+</span>
+                  <span class="hidden group-open:inline">−</span>
+              </span>
+          </summary>
+          <p class="pt-8 text-xl text-gray-500"></p>
+      </details>
+      <div class="w-full border border-gray-300 mt-6"></div>
+  </li>
+</ul>
+
+<ul class="list-disc flex flex-col gap-4 text-xl text-gray-500">
+  <li>
+      <p class="pt-6">
+          
+      </p>
+  </li>
+  <li>
+      <p class="">
+          
+      </p>
+  </li>
+</ul> 

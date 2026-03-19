@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martex Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .carousel-track {
+      animation: scroll 25s linear infinite;
+    }
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+</head>
+
+<body class="bg-gray-100">
+  <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-white transition-all duration-300 z-50">
+    <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+      <a href="./index.html" class="flex items-center gap-3">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png" alt="Martex Logo" class="h-8 object-contain">
+      </a>
+
+      <div class="hidden md:flex items-center gap-10 text-lg text-gray-600 font-medium">
+        <div class="relative group">
+          <button class="flex items-center gap-2 hover:text-blue-600 transition duration-200">
+            Company
+            <span class="text-xs opacity-70">▼</span>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 bg-white shadow-xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 p-2">
+            <a href="./aboutUs.html" class="block px-4 py-2 rounded-lg hover:bg-gray-50">About Us</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Careers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Customers</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Our Blog</a>
+            <a href="#" class="block px-4 py-2 rounded-lg hover:bg-gray-50">Contact Us</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-blue-600 transition duration-200">Case Studies</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">Pricing</a>
+        <a href="#" class="hover:text-blue-600 transition duration-200">FAQs</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" class="font-medium text-gray-800 hover:text-blue-600 transition">Sign In</a>
+        <a href="#" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+          Get Started
+        </a>
+      </div>
+
+      <button id="menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18"></path>
+          <path d="M3 12h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-white border-t border-gray-100 shadow-lg flex flex-col gap-2 py-4 px-6 text-gray-800 font-medium z-40">
+    <details class="group">
+      <summary class="cursor-pointer flex items-center justify-between py-3">
+        <span>Company</span>
+        <span class="text-xs opacity-70 group-open:rotate-180 transition">▼</span>
+      </summary>
+      <div class="pb-3 flex flex-col">
+        <a href="./aboutUs.html" class="py-2 text-gray-700 hover:text-blue-600">About Us</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Careers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Customers</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Our Blog</a>
+        <a href="#" class="py-2 text-gray-700 hover:text-blue-600">Contact Us</a>
+      </div>
+    </details>
+    <a href="#" class="py-3 hover:text-blue-600">Case Studies</a>
+    <a href="#" class="py-3 hover:text-blue-600">Pricing</a>
+    <a href="#" class="py-3 hover:text-blue-600">FAQs</a>
+    <div class="pt-3 flex items-center gap-4">
+      <a href="#" class="font-medium hover:text-blue-600 transition">Sign In</a>
+      <a href="#" class="ml-auto px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition shadow-md">
+        Get Started
+      </a>
+    </div>
+  </div>
+
+  <div id="popup" class="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-6 hidden">
+    <div class="relative">
+      <img alt="popup" src="https://martex-tailwindcss.ibthemespro.com/images/modal-2-img.jpg" class="max-w-3xl w-full rounded-xl shadow-2xl">
+      <button id="closePopup" class="absolute top-3 right-3 bg-white text-black w-8 h-8 rounded-full flex items-center justify-center">
+        ✕
+      </button>
+    </div>
+  </div>
+
+  <section class="px-24 py-24">
+    <div class="flex flex-col justify-center items-center gap-16">
+        <h2 class="text-gray-700 text-6xl font-bold pt-24">
+            How Can We Help?
+        </h2>
+        <div class="flex gap-8">
+            <div class="text-gray-500 text-xl">
+                <button data-target="list-1" class="option flex flex-col items-center border border-gray-500 rounded-lg px-8 py-5 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+                    </svg>
+                      Getting Started                      
+                </button>
+            </div>
+            <div class="text-gray-500 text-xl">
+                <button data-target="list-2" class="option flex flex-col items-center border border-gray-500 rounded-lg px-8 py-5 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                      </svg>
+                      My Account
+                </button>
+            </div>
+            <div class="text-gray-500 text-xl">
+                <button data-target="list-3" class="option flex flex-col items-center border border-gray-500 rounded-lg px-8 py-5 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                      </svg>                      
+                      Pricing Plans                     
+                </button>
+            </div>
+            <div class="text-gray-500 text-xl">
+                <button data-target="list-4" class="option flex flex-col items-center border border-gray-500 rounded-lg px-8 py-5 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                      Other Questions
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="pt-20">
+        <ul id="list-1" class="flex flex-col list-none gap-8 hidden">
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        What is Martex and how does it work?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae purus congue efficitur and ipsum primis in cubilia laoreet augue egestas luctus donec and curabitur dapibus
+
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        What's inside the package?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">What's inside the package?
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas tempor magna undo ipsum vitae purus and efficitur ipsum primis in cubilia laoreet tempor gravida luctus neque purus ipsum neque
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sapien egestas, congue gestas posuere cubilia congue ipsum mauris lectus laoreet and gestas neque vitae auctor dolor luctus placerat a magna cursus congue magna mpedit ligula undo congue. Maecenas agravida augue porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet turpis. Viverra augue, a augue tempor, dictum tempor diam. Sed pulvinar a consectetur nibh, imperdiet varius viverra
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        General settings
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet magna suscipit egestas magna ipsum purus ipsum a primis an augue ultrice ligula egestas suscipit lectus gestas integer congue a lectus porta phasellus neque blandit tristique
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas and magna and vehicula
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit lipsum egestas magna ipsum vitae a purus ipsum congue efficitur ipsum primis in cubilia laoreet augue egestas luctus donec and curabitur
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Which languages does Martex support?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis undo augue ultrice ligula egestas suscipit lectus gestas integer congue a lectus porta tristique phasellus neque a blandit and tristique justo aliquam justo suscipit congue augue egestas volutpat egestas magna sem congue
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis and augue efficitur ligula egestas suscipit lectus gestas integer congue a lectus porta phasellus neque
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Automate testing with API
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <ul class="flex flex-col list-disc gap-4 text-gray-500 text-xl">
+                        <li>
+                            <p class="pt-6">
+                                Curabitur ac dapibus libero quisque eu congue tristique egestas phasellus blandit tristique justo aliquam. Aliquam vitae molestie quisque sapien justo, aliquet aliquam molestie sed purus undo venenatis tempor gravida eget lacinia. Augue aliquam a suscipit tincidunt tincidunt massa
+                            </p>
+                        </li>
+                        <li>
+                            <p class="">
+                                Aliquam vitae molestie nunc. Quisque sapien justo, aliquet non molestie sed purus, venenatis
+                            </p>
+                        </li>
+                        <li>
+                            <p class="">
+                                Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae an efficitur purus undo ipsum primis in cubilia laoreet augue egestas luctus donec curabitur dapibus libero
+                            </p>
+                        </li>
+                    </ul>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+        </ul>
+
+        <ul id="list-2" class="flex flex-col list-none gap-8 hidden">
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Sign up and manage your account
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Curabitur ac dapibus libero eu congue tristique neque
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An aliquam justo suscipit congue augue
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Gestas integer congue a lectus porta
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Manage account settings
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sapien egestas, congue gestas posuere cubilia congue ipsum mauris lectus laoreet gestas neque and vitae undo auctor dolor luctus placerat a magna cursus congue magna mpedit ligula congue maecenas gravida augue porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet turpis. Viverra augue, a augue tempor, dictum tempor diam. Sed pulvinar a consectetur nibh, imperdiet varius viverra
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Change language or location settings
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sapien egestas, congue gestas posuere cubilia congue ipsum mauris lectus laoreet gestas neque and vitae undo auctor dolor luctus placerat a magna cursus congue magna mpedit ligula congue maecenas gravida augue porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet turpis. Viverra augue, a augue tempor, dictum tempor diam. Sed pulvinar a consectetur nibh, imperdiet varius viverra
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Troubleshoot account issues
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis an augue ultrice ligula egestas suscipit lectus gestas integer congue a lectus porta tristique phasellus neque a blandit and tristique justo aliquam justo suscipit congue augue egestas volutpat egestas magna sem congue
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis and augue efficitur ligula egestas suscipit lectus gestas integer congue a lectus porta phasellus neque
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Manage accessibility settings
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sapien egestas, congue gestas posuere cubilia congue ipsum mauris lectus laoreet gestas neque and vitae undo auctor dolor luctus placerat a magna cursus congue magna mpedit ligula congue maecenas gravida augue porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet turpis. Viverra augue, a augue tempor, dictum tempor diam. Sed pulvinar a consectetur nibh, imperdiet varius viverra
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas and magna ipsum vitae purus and efficitur ipsum primis in cubilia laoreet tempor gravida
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+        </ul>
+
+        <ul id="list-3" class="flex flex-col list-none gap-8 hidden">
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        How much does Martex cost?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis undo augue ultrice ligula egestas suscipit lectus gestas integer congue a lectus porta neque blandit tristique
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        I didn't receive the license key after purchased
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <ul class="list-disc flex flex-col gap-4 text-xl text-gray-500">
+                        <li>
+                            <p class="pt-6">
+                                Curabitur ac dapibus libero. Quisque eu congue tristique neque. Phasellus blandit tristique aliquam justo undo. Aliquam vitae molestie nunc. Quisque sapien justo, aliquet non molestie purus tempor
+                            </p>
+                        </li>
+                        <li>
+                            <p class="">
+                                Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae purus undo efficitur ipsum primis in cubilia laoreet augue egestas luctus donec curabitur dapibus libero
+                            </p>
+                        </li>
+                    </ul>                  
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Do you offer discounts for annual plans?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <ul class="list-disc flex flex-col gap-4 text-xl text-gray-500">
+                        <li>
+                            <p class="pt-6">
+                                Curabitur ac dapibus libero. Quisque eu congue justo undo tristique neque phasellus and blandit tristique aliquam. Aliquam vitae molestie nunc. Quisque sapien justo, aliquet non molestie purus tempor   
+                            </p>
+                        </li>
+                        <li>
+                            <p class="">
+                                Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae purus undo efficitur ipsum primis in cubilia laoreet augue egestas luctus donec curabitur dapibus libero
+                            </p>
+                        </li>
+                    </ul> 
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        How safe is my data?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna an ipsum purus ipsum primis an augue ultrice ligula egestas suscipit lectus gestas integer congue a lectus porta tristique phasellus neque a blandit undo tristique justo aliquam justo suscipit congue augue egestas volutpat egestas magna sem
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis and augue efficitur ligula egestas suscipit lectus gestas integer congue a lectus porta phasellus neque
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        How to request a refund?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <ul class="list-disc flex flex-col gap-4 text-xl text-gray-500">
+                        <li>
+                            <p class="pt-6">
+                                Curabitur ac dapibus libero. Quisque eu congue tristique
+                            </p>
+                        </li>
+                        <li>
+                            <p class="">
+                                Congue tristique neque phasellus blandit tristique justo undo aliquam. Aliquam vitae molestie quisque sapien justo, aliquet non molestie purus tempor
+                            </p>
+                        </li>
+                        <li>
+                            <p class="">
+                                Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum
+                            </p>
+                        </li>
+                      </ul>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+        </ul>
+
+        <ul id="list-4" class="flex flex-col list-none gap-8 hidden">
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        How do I get the error log?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas and magna ipsum vitae
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas and magna suscipit an egestas magna ipsum vitae purus congue efficitur ipsum primis in cubilia laoreet augue egestas luctus donec and curabitur dapibus
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        I forgot my folder password, what should I do?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas magna ipsum vitae purus congue efficitur ipsum primis in cubilia laoreet augue egestas luctus donec and curabitur dapibus
+                    </p>
+                    <p class="pt-8 pl-5 text-xl text-gray-500">Gestas integer congue a lectus porta</p>
+                    <p class="pt-8 pl-5 text-xl text-gray-500"> An aliquam justo suscipit congue augue</p>
+                    <p class="pt-8 pl-5 text-xl text-gray-500">Sagittis congue augue egestas volutpat egestas</p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Limitations of folder password protection
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sapien egestas, congue gestas posuere cubilia congue ipsum mauris lectus laoreet gestas neque and vitae undo auctor dolor luctus placerat a magna cursus congue magna mpedit ligula congue maecenas gravida augue porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet turpis. Viverra augue, a augue tempor, dictum tempor diam. Sed pulvinar a consectetur nibh, imperdiet varius viverra
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        Import existing library
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sapien egestas, congue gestas posuere cubilia congue ipsum mauris lectus laoreet gestas neque and vitae undo auctor dolor luctus placerat a magna cursus congue magna mpedit ligula congue maecenas gravida augue porttitor nunc, quis vehicula magna luctus tempor. Quisque vel laoreet turpis. Viverra augue, a augue tempor, dictum tempor diam. Sed pulvinar a consectetur nibh, imperdiet varius viverra
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas and magna ipsum vitae purus and efficitur ipsum primis in cubilia laoreet tempor gravida
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+          
+            <li>
+                <details class="group">
+                    <summary class="flex justify-between text-3xl text-gray-700 font-bold">
+                        I lost my license. Can you send it to me?
+                        <span class="">
+                            <span class="group-open:hidden">+</span>
+                            <span class="hidden group-open:inline">−</span>
+                        </span>
+                    </summary>
+                    <p class="pt-8 text-xl text-gray-500">
+                        An augue cubilia laoreet and magna suscipit egestas magna ipsum purus ipsum primis undo augue ultrice ligula egestas suscipit lectus gestas integer congue phasellus neque blandit tristique
+                    </p>
+                    <p class="pt-8 text-xl text-gray-500">
+                        Sagittis congue augue egestas volutpat egestas magna suscipit egestas and magna ipsum vitae
+                    </p>
+                </details>
+                <div class="w-full border border-gray-300 mt-6"></div>
+            </li>
+        </ul>
+    </div>
+  </section>
+
+  <section class="m-0 bg-gray-200">
+    <div class="grid grid-cols-2 py-44 gap-6">
+      <div class="flex flex-col justify-center items-center gap-8">
+        <h3 class="text-5xl text-gray-700 font-bold">
+          Any questions?
+        </h3>
+        <p class="text-xl text-gray-500 text-center w-2/3">Don't hesitate to contact us about any question you might be interested in</p>
+        <button class="px-8 py-3 bg-blue-500 text-white text-xl font-bold rounded-xl hover:bg-blue-700 transition duration-300">
+          Read The FaQs
+        </button>
+      </div>
+      <div>
+        <img src="assest/featrue card/help.png" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <footer class="m-20">
+    <div class="flex space-x-24">
+      <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png"
+            alt="Martex Logo"
+            class="h-8 object-contain">
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Company</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>About Us</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Careers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Our Blog</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Product</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Integration</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Customers</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Pricing</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Help Center</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-xl font-bold">Legal</h4>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Terms of Use</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Privacy Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Cookie Policy</li>
+        </ul>
+        <ul class="list-none text-gray-500 text-xl">
+          <li>Site Map</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">  
+        <label for="email" class="block text-xl font-bold">
+          Connect With Us
+        </label>
+        <div>
+          <span class="list-none text-gray-500 text-xl">hello@yourdomain.com</span>
+          <div class="flex gap-6 text-2xl text-gray-600 mt-6">
+            <a href="#" class="hover:text-blue-600 transition">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+    
+            <a href="#" class="hover:text-pink-500 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+    
+            <a href="#" class="hover:text-red-600 transition">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+    
+            <a href="#" class="hover:text-black transition">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between mt-20 overline">
+      <div>
+        <h5 class="text-gray-500">© 2025 Martex. All Rights Reserved</h5>
+      </div>
+      <div>
+        <span class="text-gray-500">Made by Himanshu Pandey</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navbar = document.getElementById("navbar");
+    menuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+    });
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-white", "shadow-md");
+      } else {
+        navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+
+    const logo = document.querySelector("#navbar img");
+    const navbarLogoDefaultSrc = logo?.getAttribute("src");
+    window.addEventListener("scroll", function () {
+      if (navbarLogoDefaultSrc) logo.src = navbarLogoDefaultSrc;
+    });
+
+    const options = document.querySelectorAll(".option");
+    const lists = document.querySelectorAll("ul[id^='list-']"); // all lists
+
+    options.forEach(option => {
+    option.addEventListener("click", () => {
+        options.forEach(btn => {
+        btn.classList.remove("bg-blue-500", "text-white", "border-blue-500");
+        btn.classList.add("text-gray-500");
+        });
+        option.classList.add("bg-blue-500", "text-white", "border-blue-500");
+        option.classList.remove("text-gray-500");
+        lists.forEach(list => {
+        list.classList.add("hidden");
+        });
+        const targetId = option.getAttribute("data-target");
+        const targetList = document.getElementById(targetId);
+
+        if (targetList) {
+        targetList.classList.remove("hidden");
+        }
+
+    });
+    });
+  </script>
+</body>
+</html>
