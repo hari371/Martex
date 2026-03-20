@@ -29,7 +29,7 @@
   <script>lucide.createIcons();</script>
 </head>
 
-<body>
+<body class="">
   <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-transparent transition-all duration-300 z-50">
     <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
       <div class="flex items-center gap-12">
@@ -58,7 +58,7 @@
               <span class="text-xs">▼</span>
             </button>
             <div class="absolute left-1/2 -translate-x-1/2 top-full w-[900px] bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 p-6 pt-4">
-              <div class="grid grid-cols-5 gap-4 text-sm text-gray-700">
+              <div class="grid grid-cols-5 gap-4 text-lg text-gray-700">
                 <a href="#" class=" hover:text-blue-600">About Us</a>
                 <a href="#" class=" hover:text-blue-600">Our Team</a>
                 <a href="#" class=" hover:text-blue-600">Careers</a>
@@ -120,21 +120,24 @@
     </div>
   </div>
 
-  <section class="pt-32 pb-20 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-12">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+  <section class="py-24 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white relative overflow-hidden">
+    <div class="grid grid-cols-2 items-center gap-4">
+      <div class="pl-24 flex flex-col justify-center items-center gap-6">
+        <h1 class="text-6xl font-bold text-white leading-tight">
           Content is the key to building an audience
         </h1>
-        <p class="mt-6 text-lg text-white">
+        <p class="text-xl text-white">
           Mauris donec turpis suscipit sapien ociis sagittis sapien tempor a volute ligula and aliquet tortor
         </p>
-        <div class="mt-8 flex gap-4">
-          <button class="px-6 py-3 bg-[#f74740] hover:bg-purple-600 text-white rounded-md font-medium transition">
+        <div class="flex gap-4 self-start">
+          <button class="px-6 py-3 bg-pink-500 text-white rounded-md font-medium border border-transparent hover:border-white hover:bg-transparent transition duration-300  ease-in-out">
             Get Started For Free
           </button>
         </div>
-        <p class="mt-6 text-lg text-white">
+        <p class="flex self-start text-xl text-white gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>          
           No credit card needed, free 14-day trial
         </p>
       </div>
@@ -146,75 +149,65 @@
     </div>
   </section>
 
-  <section class="m-24bg-gray-100">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-
-      <h2 class="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
-        Build a customer-centric <br class="hidden md:block">
-        marketing strategy
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center mx-auto px-6 text-center gap-10">
+      <h2 class="text-5xl font-bold text-gray-700 w-2/3">
+        Build a customer-centric marketing strategy
       </h2>
 
-      <p class="text-lg text-gray-500 mb-16">
+      <p class="text-2xl text-gray-500 font-semibold">
         Ligula risus auctor tempus magna feugiat lacinia.
       </p>
 
-      <div class="grid md:grid-cols-4 gap-12">
+      <div class="grid grid-cols-4 gap-12">
 
         <div>
-          <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-[#f74740]/10 rounded-full flex items-center justify-center">
-              <span class="flaticon-graphics relative z-[2]"></span>
-            </div>
+          <div class="flex justify-center ">
+              <img src="assests/logos/Screenshot 2026-03-20 142521.png" alt="Market Researchs" class="bg-transparent" />
           </div>
-          <h3 class="text-xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
             Market Researchs
-          </h3>
-          <p class="text-gray-500 leading-relaxed">
+          </h5>
+          <p class="text-xl text-gray-500">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
         </div>
 
         <div>
-          <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-[#f74740]/10 rounded-full flex items-center justify-center">
-              💡
-            </div>
+          <div class="flex justify-center ">
+            <img src="assests/logos/Screenshot 2026-03-20 142550.png" alt="User Experience" class="bg-transparent" />
           </div>
-          <h3 class="text-xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
             User Experience
-          </h3>
-          <p class="text-gray-500 leading-relaxed">
+          </h5>
+          <p class="text-xl text-gray-500 leading-relaxed">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
         </div>
 
         <div>
-          <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-[#f74740]/10 rounded-full flex items-center justify-center">
-              📈
-            </div>
+          <div class="flex justify-center ">
+            <img src="assests/logos/Screenshot 2026-03-20 142602.png" alt="Digital Marketing" class="bg-transparent" />
           </div>
-          <h3 class="text-xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
             Digital Marketing
-          </h3>
-          <p class="text-gray-500 leading-relaxed">
+          </h5>
+          <p class="text-xl text-gray-500 leading-relaxed">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
         </div>
 
         <div>
-          <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-[#f74740]/10 rounded-full flex items-center justify-center">
-              🔍
-            </div>
+          <div class="flex justify-center ">
+            <img src="assests/logos/Screenshot 2026-03-20 142624.png" alt="SEO Services" class="bg-transparent" />
           </div>
-          <h3 class="text-xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
             SEO Services
-          </h3>
-          <p class="text-gray-500 leading-relaxed">
+          </h5>
+          <p class="text-xl text-gray-500 leading-relaxed">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
@@ -224,136 +217,131 @@
     </div>
   </section>
 
-  <section class="m-24bg-gray-100">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="grid md:grid-cols-2 items-center gap-16">
-        <div class="relative">
-          <img 
-            src="https://martex-tailwindcss.ibthemespro.com/images/img-10.png" 
-            alt="Engagement Image"
-            class="w-full max-w-lg mx-auto"
-          >
-        </div>
+  <div class="w-full my-24 border border-gray-100"></div>
 
-        <div>
-          <p class="text-sm font-semibold tracking-wider text-gray-500 uppercase mb-4">
-            Enhance Engagement
-          </p>
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-700 leading-tight mb-6">
-            Engage your most
-            valuable visitors
-          </h2>
-          <p class="text-gray-500 leading-relaxed mb-8">
-            Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque 
-            auctor turpis vitae dolor luctus placerat magna and ligula cursus purus 
-            vitae purus an ipsum suscipit.
-          </p>
-          <h3 class="text-xl font-semibold text-gray-700 mb-4">
-            Digits that define growth
-          </h3>
-          <ul class="space-y-4 text-gray-500">
-            <li class="flex items-start gap-3">
-              <span class="mt-1 w-2 h-2 bg-[#f74740] rounded-full"></span>
+  <section class="m-24">     
+    <div class="grid grid-cols-2 items-center gap-8">
+      <div class="relative">
+        <img 
+          src="https://martex-tailwindcss.ibthemespro.com/images/img-10.png" 
+          alt="Engagement Image"
+          class=""
+        >
+      </div>
+      <div class="flex flex-col gap-6 justify-center">
+        <p class="text-lg font-semibold text-gray-500 uppercase">
+          Enhance Engagement
+        </p>
+        <h2 class="text-5xl font-bold text-gray-700 leading-tight w-2/3">
+          Engage your most valuable visitors
+        </h2>
+        <p class="text-xl text-gray-500 leading-relaxed">
+          Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque 
+          auctor turpis vitae dolor luctus placerat magna and ligula cursus purus 
+          vitae purus an ipsum suscipit.
+        </p>
+        <h4 class="text-3xl font-semibold text-gray-700">
+          Digits that define growth
+        </h4>
+        <ul class="flex flex-col gap-4 list-disc text-gray-500 text-xl">
+          <li class="">
+            <P>
               Sapien quaerat tempor an ipsum laoreet purus and sapien dolor an 
               ultrice ipsum aliquam undo congue cursus dolor
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="mt-1 w-2 h-2 bg-[#f74740] rounded-full"></span>
+            </P>
+          </li>
+          <li class="">
+            <p>
               Purus suscipit cursus vitae cubilia magnis volute egestas vitae 
               sapien turpis ultrice auctor congue magna placerat
-            </li>
-          </ul>
-        </div>
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="bg-[#f5f7fb] m-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="grid lg:grid-cols-2 items-center gap-12">
-        <div>
-          <h2 class="text-4xl lg:text-5xl font-bold text-gray-700 leading-tight mb-6">
-            Solution that grows with you
-          </h2>
-          <p class="text-gray-500 text-lg leading-relaxed mb-8">
-            Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque
-            auctor turpis vitae dolor luctus placerat magna and ligula cursus purus
-            vitae purus an ipsum suscipit
-          </p>
-          <h3 class="text-2xl font-semibold text-gray-700 mb-4">
-            Connect your data sources
-          </h3>
-          <p class="text-gray-500 mb-6">
-            Tempor sapien sodales quaerat ipsum undo congue laoreet turpis neque
-            auctor turpis vitae dolor luctus placerat magna and ligula cursus purus
-            an ipsum vitae suscipit purus
-          </p>
-          <ul class="space-y-4 text-gray-500">
-            <li class="flex items-start">
-              <span class="text-[#f74740] mr-3 mt-1">•</span>
+  <section class="m-24">
+    <div class="grid grid-cols-2 items-center gap-8">
+      <div class="flex flex-col gap-4">
+        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">
+          Solution that grows with you
+        </h4>
+        <p class="text-gray-500 text-xl leading-relaxed ">
+          Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque
+          auctor turpis vitae dolor luctus placerat magna and ligula cursus purus
+          vitae purus an ipsum suscipit
+        </p>
+        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">
+          Connect your data sources
+        </h4>
+        <p class="text-gray-500 text-xl leading-relaxed ">
+          Tempor sapien sodales quaerat ipsum undo congue laoreet turpis neque
+          auctor turpis vitae dolor luctus placerat magna and ligula cursus purus
+          an ipsum vitae suscipit purus
+        </p>
+        <ul class="flex flex-col gap-4 list-disc text-gray-500 text-xl">
+          <li class="">
+            <p>
               Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an
               ultrice ipsum aliquam undo congue dolor cursus
-            </li>
-            <li class="flex items-start">
-              <span class="text-[#f74740] mr-3 mt-1">•</span>
+            </p>
+          </li>
+          <li class="">
+            <p>
               Cursus purus suscipit vitae cubilia magnis volute egestas vitae
               sapien turpis ultrice auctor congue magna placerat
-            </li>
-          </ul>
-        </div>
+            </p>
+          </li>
+        </ul>
+      </div>
 
-        <div class="relative flex justify-center">
-          <img 
-            src="https://martex-tailwindcss.ibthemespro.com/images/img-06.png
-            " 
-            alt="Hero Image"
-            class="relative z-10 rounded-2xl shadow-xl w-[420px]"
-          />
-          <div class="absolute top-10 -left-6 bg-white p-5 rounded-xl shadow-lg w-48">
-            <p class="text-gray-500 text-sm mb-2">Impressions</p>
-            <h4 class="text-2xl font-bold text-gray-700">9,649</h4>
-            <p class="text-red-500 text-sm mt-1">▼ 24.69%</p>
-          </div>
-          <div class="absolute bottom-0 -right-6 bg-white p-6 rounded-xl shadow-lg w-56 text-center">
-            <div class="text-3xl font-bold text-gray-700">19,46%</div>
-            <p class="text-gray-500">Engagement Rate</p>
-            <p class="text-green-500 mt-2 font-semibold">▲ 102,48%</p>
-          </div>
-        </div>
+      <div class="relative flex justify-center">
+        <img 
+          src="https://martex-tailwindcss.ibthemespro.com/images/img-06.png
+          " 
+          alt="Hero Image"
+          class=""
+        />
       </div>
     </div>
   </section>
   
-  <section class="bg-[#f5f7fb] m-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl lg:text-6xl font-bold text-gray-700 leading-tight mb-6">
-          Reach your audience through social media marketing
-        </h2>
-        <p class="text-xl text-gray-500">
-          Ligula risus auctor tempus magna feugiat lacinia.
+  <section class="m-24">
+    <div class="flex flex-col justify-center items-center text-center w-2/3 mx-auto gap-8">
+      <h2 class="text-6xl font-bold text-gray-700 leading-tight">
+        Reach your audience through social media marketing
+      </h2>
+      <p class="text-2xl text-gray-500 font-semibold">
+        Ligula risus auctor tempus magna feugiat lacinia.
+      </p>
+    </div> 
+
+    <div class="grid grid-cols-2 gap-10 mt-20">
+      <div class="flex flex-col justify-center items-center text-center bg-gray-100 rounded-xl p-10 relative overflow-hidden gap-6">
+        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">Marketing Integrations</h4>
+        <p class="text-gray-500 text-xl leading-relaxed ">
+          Aliquam a augue suscipit luctus diam neque purus ipsum neque and dolor primis libero
         </p>
-      </div> 
-
-      <div class="grid lg:grid-cols-2 gap-10">
-        <div class="bg-white rounded-3xl shadow-lg p-10 relative overflow-hidden">
-          <div class="bg-gray-100 rounded-2xl p-8 flex items-center justify-center h-64">
-            <img 
-              src="https://martex-tailwindcss.ibthemespro.com/images/f_06.png" 
-              alt="Feature Image 1"
-            />
-          </div>
+        <div class="rounded-2xl">
+          <img 
+            src="https://martex-tailwindcss.ibthemespro.com/images/f_06.png" 
+            alt="Feature Image 1"
+          />
         </div>
+      </div>
 
-        <div class="bg-white rounded-3xl shadow-lg p-10 relative overflow-hidden">
-          <div class="bg-gray-100 rounded-2xl p-8 flex items-center justify-center h-64">
-            <img 
-              src="https://martex-tailwindcss.ibthemespro.com/images/f_04.png" 
-              alt="Feature Image 2"
-            />
-          </div>
+      <div class="flex flex-col justify-center items-center text-center bg-gray-100 rounded-xl p-10 relative overflow-hidden gap-6">
+        <div class="rounded-2xl">
+          <img 
+            src="https://martex-tailwindcss.ibthemespro.com/images/f_04.png" 
+            alt="Feature Image 2"
+          />
         </div>
+        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">Productivity Focused</h4>
+        <p class="text-gray-500 text-xl leading-relaxed ">
+          Aliquam a augue suscipit luctus diam neque purus ipsum neque and dolor primis libero
+        </p>
       </div>
     </div>
   </section>
@@ -391,27 +379,28 @@
     </div>
   </section>
 
+  <div class="border border-gray-100 w-full"></div>
+
   <section class="m-24">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid grid-cols-2 gap-8 items-center">
       <div class="bg-white rounded-3xl p-10 relative overflow-hidden">
           <img 
             src="https://martex-tailwindcss.ibthemespro.com/images/img-03.png" 
             alt="Feature Image 2"
           />
       </div>
-
-      <div>
-        <h2 class="text-4xl font-bold text-gray-700 mb-6">
+      <div class="flex flex-col gap-6">
+        <h4 class="text-3xl font-bold text-gray-700">
           The smarter way to work
-        </h2>
-        <p class="text-gray-500 leading-relaxed mb-6">
+        </h4>
+        <p class="text-xl text-gray-500 leading-relaxed">
           Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque
           auctor turpis vitae dolor luctus placerat magna and ligula cursus purus.
         </p>
-        <h3 class="text-2xl font-semibold text-gray-700 mb-4">
+        <h4 class="text-3xl font-bold text-gray-700 ">
           Full access to all features
-        </h3>
-        <ul class="text-xl list-disc text-gray-500 mb-8">
+        </h4>
+        <ul class="text-xl list-disc text-gray-500 ">
           <li class="">
             Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis sodales magna undo aoreet primis
           </li>
@@ -419,7 +408,7 @@
             Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue dolor cursus purus congue and ipsum purus sapien a blandit
           </li>
         </ul>
-        <button class="px-6 py-3 border border-gray-400 rounded-lg font-medium hover:bg-pink-500 hover:text-white transition">
+        <button class="flex self-start px-6 py-3 border-2 border-black rounded-lg text-xl font-medium hover:border-transparent hover:bg-pink-500 hover:text-white transition duration-300">
           What's possible?
         </button>
       </div>
@@ -429,7 +418,7 @@
   <section class="m-24">
     <div class="grid grid-cols-2 gap-10 items-center">
       <div class="flex flex-col gap-6">
-        <p class="text-lg font-semibold text-gray-500 uppercase">
+        <p class="text-xl font-semibold text-gray-500 uppercase">
           One-Stop Solution
         </p>
         <h2 class="text-5xl font-bold text-gray-700">
@@ -458,8 +447,8 @@
 
       <div class="grid sm:grid-cols-2 gap-8">
         <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
-          <div class="w-16 h-16 flex items-center justify-center mb-6">
-            <img alt="" src="https://martex-tailwindcss.ibthemespro.com/images/Screenshot 2026-03-17 132511.png" />
+          <div class="w-16 h-16 flex items-center justify-center ">
+            <img alt="" src="/assests/logos/Screenshot 2026-03-20 160339.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Content Marketing</h3>
           <p class="text-gray-500">
@@ -468,8 +457,8 @@
         </div>
 
         <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
-          <div class="w-16 h-16 flex items-center justify-center mb-6">
-            <img alt="" src="https://martex-tailwindcss.ibthemespro.com/images/Screenshot 2026-03-17 132528.png" />
+          <div class="w-16 h-16 flex items-center justify-center ">
+            <img alt="" src="/assests/logos/Screenshot 2026-03-20 160351.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Pay Per Click (PPC)</h3>
           <p class="text-gray-500">
@@ -478,8 +467,8 @@
         </div>
 
         <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
-          <div class="w-16 h-16 flex items-center justify-center mb-6">
-            <img alt="" src="https://martex-tailwindcss.ibthemespro.com/images/Screenshot 2026-03-17 132537.png" />
+          <div class="w-16 h-16 flex items-center justify-center ">
+            <img alt="" src="/assests/logos/Screenshot 2026-03-20 160420.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Video Marketing</h3>
           <p class="text-gray-500">
@@ -488,8 +477,8 @@
         </div>
 
         <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
-          <div class="w-16 h-16 flex items-center justify-center mb-6">
-            <img alt="" src="https://martex-tailwindcss.ibthemespro.com/images/Screenshot 2026-03-17 132552.png" />
+          <div class="w-16 h-16 flex items-center justify-center ">
+            <img alt="" src="/assests/logos/Screenshot 2026-03-20 160434.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Business Analytics</h3>
           <p class="text-gray-500">
@@ -501,29 +490,27 @@
   </section>
 
   <section class="m-24">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid grid-cols-2 gap-16">
       <div class="flex justify-center">
         <img 
           src="https://martex-tailwindcss.ibthemespro.com/images/img-02.png" 
           alt="Integration Tools" 
-          class="w-[500px] lg:w-[600px]"
+          class=""
         >
       </div>
 
-      <div>
-        <p class="text-pink-500 font-semibold uppercase tracking-wider mb-4">
+      <div class="flex flex-col justify-center gap-8">
+        <p class="text-gray-500 text-lg font-semibold uppercase tracking-wider ">
           Easy Integration
         </p>
-        <h2 class="text-4xl lg:text-5xl font-bold text-gray-700 leading-tight mb-6">
+        <h2 class="text-5xl font-bold text-gray-700 leading-tight ">
           Plug your essential tools in few clicks
         </h2>
-        <ul class="space-y-4 text-gray-500 text-lg">
-          <li class="flex items-start gap-3">
-            <span class="text-pink-500 mt-2">•</span>
+        <ul class="flex flex-col gap-4 text-gray-500 text-xl list-disc">
+          <li class="">
             Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis sodales magna undo aoreet primis
           </li>
-          <li class="flex items-start gap-3">
-            <span class="text-pink-500 mt-2">•</span>
+          <li class="">
             Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an ultrice ipsum aliquam undo congue dolor cursus purus congue and ipsum purus sapien a blandit
           </li>
         </ul>
@@ -533,7 +520,7 @@
 
   <section class="bg-gray-100 mb-12">
     <div class="text-center max-w-2xl mx-auto pt-16">
-      <h2 class="text-4xl lg:text-5xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-5xl font-bold text-gray-700 leading-tight">
         Track the progress towards objectives with key results
       </h2>
       <h4 class="text-2xl text-gray-500 bg-transparent leading-tight my-10">
@@ -584,7 +571,7 @@
 
   <section class="bg-white m-24">
     <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-4xl lg:text-5xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-5xl font-bold text-gray-700 leading-tight">
         The Complete Solutions
       </h2>
       <h4 class="text-2xl text-gray-500 bg-transparent leading-tight my-10">
@@ -635,64 +622,55 @@
     </div>
   </section>
 
-  <section class="m-24max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-20 items-center">
-    <div>
-      <p class="text-gray-500 font-semibold uppercase tracking-wider mb-4">
+  <section class="grid grid-cols-2 m-24">
+    <div class="flex flex-col gap-8">
+      <p class="text-gray-500 text-lg font-semibold uppercase tracking-wider ">
         Productivity Focused
       </p>
-      <h2 class="text-4xl lg:text-5xl font-bold text-gray-700 leading-tight mb-6">
+      <h2 class="text-5xl font-bold text-gray-700 leading-tight ">
         Achieve more with better workflows
       </h2>
-      <p class="text-gray-500 text-lg leading-relaxed mb-6">
+      <p class="text-gray-500 text-xl leading-relaxed ">
         Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit
       </p>
-      <ul class="space-y-4 text-gray-500 text-lg">
+      <ul class="space-y-4 text-gray-500 text-xl">
         <li class="flex items-start gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-              class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0"
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M5 13l4 4L19 7"/>
-          </svg>
+          <div class="text-pink-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>          
           <span>Magna dolor luctus at egestas sapien</span>
         </li>
         <li class="flex items-start gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-              class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0"
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M5 13l4 4L19 7"/>
-          </svg>
+          <div class="text-pink-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
           <span>Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis ultrice auctor congue varius magnis</span>
         </li>
         <li class="flex items-start gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" 
-              class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0"
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M5 13l4 4L19 7"/>
-          </svg>
+          <div class="text-pink-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </div>
           <span>Volute turpis dolores and sagittis congue</span>
         </li>
       </ul>
     </div>
-    <div class="flex justify-center">
+    <div class="">
       <img 
         src="https://martex-tailwindcss.ibthemespro.com/images/img-13.png" 
         alt="Integration Tools" 
-        class="w-full max-w-lg"
+        class=""
       >
     </div>
   </section>
 
-  <section class="bg-white m-24">
-    <div class="text-center max-w-3xl mx-auto">
+  <section class="m-24">
+    <div class="flex flex-col gap-8 justify-center items-center text-center w-2/3 mx-auto">
       <h2 class="text-4xl lg:text-6xl font-bold text-gray-700 leading-tight">
         Discover insights across all your data with Martex
       </h2>
@@ -706,14 +684,14 @@
       <img 
         src="https://martex-tailwindcss.ibthemespro.com/images/img-19.png"
         alt="Integration Tools"
-        class="w-full max-w-6xl"
+        class=""
       >
     </div>
-    <div class="flex flex-col items-center">
-      <button class="px-6 py-2 font-semibold text-gray-700 border border-black rounded-md hover:bg-pink-600 hover:text-white transition duration-200">
+    <div class="flex flex-col items-center mt-10">
+      <button class="px-6 py-2 font-semibold text-gray-700 border border-black rounded-lg hover:border-transparent hover:bg-pink-600 hover:text-white transition duration-300">
         Monitor Your Activity
       </button>
-      <div class="flex gap-4 justify-center mt-4 text-gray-500">
+      <div class="flex gap-4 justify-center mt-4 text-xl text-gray-500">
         <span>Free 14 days trial</span>
         <span>|</span>
         <span> Exclusive Support</span>
@@ -723,44 +701,41 @@
     </div>
   </section>
 
-  <section class=>
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="grid md:grid-cols-2 items-center gap-16">
-        <div class="relative">
-          <img 
-            src="https://martex-tailwindcss.ibthemespro.com/images/img-09.png" 
-            alt="Engagement Image"
-            class="w-full max-w-lg mx-auto"
-          >
+  <section class="m-24">
+    <div class="grid grid-cols-2 gap-6">
+      <div class="relative">
+        <img 
+          src="https://martex-tailwindcss.ibthemespro.com/images/img-09.png" 
+          alt="Engagement Image"
+          class=""
+        >
+      </div>
+      <div class="flex flex-col justify-center gap-8">
+        <div class="flex space-x-6 items-start">
+          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
+            1
+          </button>
+          <div>
+            <h3 class="text-3xl font-semibold  mb-4">Register in 30 seconds</h3>
+            <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
+          </div>
         </div>
-        <div class="space-y-10">
-          <div class="flex space-x-6 items-start">
-            <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
-              1
-            </button>
-            <div>
-              <h3 class="text-3xl font-semibold mb-4">Register in 30 seconds</h3>
-              <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
-            </div>
+        <div class="flex space-x-6 items-start">
+          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
+            2
+          </button>
+          <div>
+            <h3 class="text-3xl font-semibold  mb-4">Customizable Dashboards</h3>
+            <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
           </div>
-          <div class="flex space-x-6 items-start">
-            <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
-              2
-            </button>
-            <div>
-              <h3 class="text-3xl font-semibold mb-4">Customizable Dashboards</h3>
-              <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
-            </div>
-          </div>
-          <div class="flex space-x-6 items-start">
-            <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
-              3
-            </button>
-            <div>
-              <h3 class="text-3xl font-semibold mb-4">Improved Productivity</h3>
-              <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
-            </div>
+        </div>
+        <div class="flex space-x-6 items-start">
+          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
+            3
+          </button>
+          <div>
+            <h3 class="text-3xl font-semibold  mb-4">Improved Productivity</h3>
+            <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
           </div>
         </div>
       </div>
@@ -776,105 +751,105 @@
       <div id="review-carousel" class="flex gap-6 overflow-x-auto scroll-smooth pb-8 pt-4">
 
         <div id="card-1" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             Etiam sapien sagittis congue augue a massa varius egestas ultrice varius magna a tempus aliquet undo cursus suscipit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-1" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-1.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Scott Boxer</h4>
-              <p class="text-sm text-gray-500">@scott boxer</p>
+              <p class="text-lg text-gray-500">@scott boxer</p>
             </div>
           </div>
         </div>
 
         <div id="card-2" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             At sagittis congue augue diam egestas magna an ipsum vitae purus ipsum primis and cubilia laoreet augue egestas a luctus donec Itrice ligula porta augue magna suscipit lectus. gestas                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-2" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-2.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Joel Peterson</h4>
-              <p class="text-sm text-gray-500">Internet Surfer</p>
+              <p class="text-lg text-gray-500">Internet Surfer</p>
             </div>
           </div>
         </div>
 
         <div id="card-3" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             Mauris gestas magnis a sapien etiam sapien congue an augue egestas and ultrice vitae purus diam an integer congue magna ligula egestas magna suscipit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-3" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-3.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Marisol19</h4>
-              <p class="text-sm text-gray-500">@marisol19</p>
+              <p class="text-lg text-gray-500">@marisol19</p>
             </div>
           </div>
         </div>
 
         <div id="card-4" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             Mauris donec a magnis sapien etiam pretium a congue augue volutpat lectus aenean magna and undo mauris lectus laoreet tempor egestas rutrum                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-4" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-4.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Leslie D.</h4>
-              <p class="text-sm text-gray-500">Web Developer</p>
+              <p class="text-lg text-gray-500">Web Developer</p>
             </div>
           </div>
         </div>
 
         <div id="card-5" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             An augue cubilia undo laoreet magna suscipit egestas ipsum lectus purus ipsum and primis augue an ultrice ligula egestas suscipit a lectus gestas auctor tempus feugiat impedit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-5" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-5.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Jennifer Harper</h4>
-              <p class="text-sm text-gray-500">App Developer</p>
+              <p class="text-lg text-gray-500">App Developer</p>
             </div>
           </div>
         </div>
 
         <div id="card-6" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             An augue cubilia laoreet undo magna ipsum semper suscipit egestas magna ipsum ligula a vitae purus and ipsum primis cubilia magna suscipit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-6" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-6.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Jonathan Barnes</h4>
-              <p class="text-sm text-gray-500">jQuery Programmer</p>
+              <p class="text-lg text-gray-500">jQuery Programmer</p>
             </div>
           </div>
         </div>
 
         <div id="card-7" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             Augue egestas porta tempus volutpat. egestas augue cubilia laoreet a magna suscipit luctus dolor blandit vitae purus neque tempus an aliquet porta gestas rutrum blandit vitae                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-7" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-7.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Mike Harris</h4>
-              <p class="text-sm text-gray-500">Graphic Designer</p>
+              <p class="text-lg text-gray-500">Graphic Designer</p>
             </div>
           </div>
         </div>
 
         <div id="card-8" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 mb-6">
+          <p class="text-gray-500 ">
             Augue at vitae purus tempus egestas volutpat augue undo cubilia laoreet magna suscipit luctus dolor blandit at purus tempus feugiat impedit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-8" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-8.jpg" class="w-12 h-12 rounded-full"/>
             <div>
               <h4 class="font-semibold text-gray-700">Evelyn Martinez</h4>
-              <p class="text-sm text-gray-500">WordPress Consultant</p>
+              <p class="text-lg text-gray-500">WordPress Consultant</p>
             </div>
           </div>
         </div>
@@ -891,7 +866,7 @@
         <img alt="brand-21" src="https://martex-tailwindcss.ibthemespro.com/images/brand-21.png" class="h-10 object-contain">
         <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
           <span class="text-yellow-400">★★★★★</span>
-          <span class="text-gray-500 text-sm font-semibold">4.7/5</span>
+          <span class="text-gray-500 text-lg font-semibold">4.7/5</span>
         </div>
       </div>
 
@@ -899,7 +874,7 @@
         <img alt="brand-22" src="https://martex-tailwindcss.ibthemespro.com/images/brand-22.png" class="h-10 object-contain">
         <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
           <span class="text-yellow-400">★★★★★</span>
-          <span class="text-gray-500 text-sm font-semibold">4.95/5</span>
+          <span class="text-gray-500 text-lg font-semibold">4.95/5</span>
         </div>
       </div>
 
@@ -907,60 +882,59 @@
         <img alt="brand-23" src="https://martex-tailwindcss.ibthemespro.com/images/brand-23.png" class="h-10 object-contain">
         <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
           <span class="text-yellow-400">★★★★★</span>
-          <span class="text-gray-500 text-sm font-semibold">4.24/5</span>
+          <span class="text-gray-500 text-lg font-semibold">4.24/5</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-gray-100 m-24 rounded-2xl">
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-4xl lg:text-6xl font-bold text-gray-700 leading-tight">
+  <section class="bg-gray-100 m-24 rounded-xl">
+    <div class="flex flex-col justify-center items-center text-center w-2/3 mx-auto pt-20 gap-10">
+      <h2 class="text-6xl font-bold text-gray-700 leading-tight">
         Automate your workflow with our integrations
       </h2>
-      <h4 class="text-xl text-gray-500 my-8">
+      <h4 class="text-2xl text-gray-500">
         Ligula risus auctor tempus magna feugiat lacinia.
       </h4>
     </div>
-
-    <div class="max-w-5xl mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 mt-16">
+    <div class="grid grid-cols-5 mt-16 gap-6 mx-auto max-w-5xl">
       <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition">
-          <img alt="tool-1" src="https://martex-tailwindcss.ibthemespro.com/images/tool-1.png" class="h-14">
+        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+          <img alt="tool-1" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-1.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-sm font-medium mt-3">Zapier</span>
+        <span class="text-gray-700 text-lg font-medium mt-3">Zapier</span>
       </div>
 
       <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
-          <img alt="tool-2" src="https://martex-tailwindcss.ibthemespro.com/images/tool-2.png" class="h-14">
+        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+          <img alt="tool-2" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-2.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-sm font-medium mt-3">Google Analytics</span>
+        <span class="text-gray-700 text-lg font-medium mt-3">Google Analytics</span>
       </div>
 
       <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
-          <img alt="tool-3" src="https://martex-tailwindcss.ibthemespro.com/images/tool-3.png" class="h-14">
+        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+          <img alt="tool-3" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-3.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-sm font-medium mt-3">Amplitude</span>
+        <span class="text-gray-700 text-lg font-medium mt-3">Amplitude</span>
       </div>
       
       <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
-          <img alt="tool-4" src="https://martex-tailwindcss.ibthemespro.com/images/tool-4.png" class="h-14">
+        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+          <img alt="tool-4" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-4.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-sm font-medium mt-3">Hubspot</span>
+        <span class="text-gray-700 text-lg font-medium mt-3">Hubspot</span>
       </div>
       
       <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
-          <img alt="tool-5" src="https://martex-tailwindcss.ibthemespro.com/images/tool-5.png" class="h-14">
+        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+          <img alt="tool-5" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-5.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-sm font-medium mt-3">MailChimp</span>
+        <span class="text-gray-700 text-lg font-medium mt-3">MailChimp</span>
       </div>
     </div>
     <div class="flex justify-center mt-16">
-      <button class="px-6 py-3 font-semibold text-lg border-2 border-black rounded-md hover:bg-pink-600 hover:text-white transition">
+      <button class="mb-24 px-6 py-3 font-semibold text-xl border-2 border-black rounded-md hover:border-transparent hover:bg-pink-600 hover:text-white transition duration-300">
         View All Integrations
       </button>
     </div>
@@ -973,17 +947,17 @@
     </div>
     <div class="grid grid-cols-2 gap-6">
       <div id="q1">
-        <h3 class="text-3xl font-semibold mb-4">1. Getting started with Martex</h3>
+        <h3 class="text-3xl font-semibold ">1. Getting started with Martex</h3>
         <p class=" text-xl text-gray-500">Etiam amet mauris suscipit in odio integer congue metus and vitae arcu mollis blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus blandit and laoreet</p>
       </div>
 
       <div id="q2">
-        <h3 class="text-3xl font-semibold mb-4">2. What's inside the package?</h3>
+        <h3 class="text-3xl font-semibold ">2. What's inside the package?</h3>
         <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
       </div>
 
       <div id="q3">
-        <h3 class="text-3xl font-semibold mb-4">3. How do I choose a plan?</h3>
+        <h3 class="text-3xl font-semibold ">3. How do I choose a plan?</h3>
         <ul class="list-disc">
           <li class=" text-xl text-gray-500">Fringilla risus, luctus mauris orci auctor purus ligula euismod pretium purus pretium rutrum tempor sapien</li>
           <li class=" text-xl text-gray-500">Nemo ipsam egestas volute undo turpis purus lipsum primis aliquam sapien quaerat sodales pretium a purus</li>
@@ -991,33 +965,33 @@
       </div>
 
       <div id="q4">
-        <h3 class="text-3xl font-semibold mb-4">4. How does Martex handle my privacy?</h3>
+        <h3 class="text-3xl font-semibold ">4. How does Martex handle my privacy?</h3>
         <p class=" text-xl text-gray-500">Quaerat sodales sapien euismod blandit purus a purus ipsum primis in cubilia laoreet augue luctus dolor luctus</p>
         <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec congue metus. Vitae arcu mollis blandit integer nemo volute velna</p>
       </div>
 
       <div id="q5">
-        <h3 class="text-3xl font-semibold mb-4">5. I have an issue with my account</h3>
+        <h3 class="text-3xl font-semibold ">5. I have an issue with my account</h3>
         <p class=" text-xl text-gray-500">Cubilia laoreet augue egestas and luctus donec curabite diam vitae dapibus libero and quisque gravida donec neque blandit justo aliquam molestie nunc sapien justo</p>
       </div>
 
       <div id="q6">
-        <h3 class="text-3xl font-semibold mb-4">6. Can I cancel at anytime?</h3>
+        <h3 class="text-3xl font-semibold ">6. Can I cancel at anytime?</h3>
         <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
       </div>
     </div>
     <div class="flex justify-center mt-20">
       <div class="inline-flex items-center gap-2 bg-gray-100 px-12 py-5 rounded-full">
         <span class="text-xl text-gray-500">Have any questions?</span>
-          <a href="#" class="text-xl font-semibold text-pink-500 underline">
+          <a href="#" class="text-xl font-semibold text-pink-500 underline hover:text-gray-700 transition duration-300">
             Get in Touch
           </a>
         </div>
     </div>
   </section>
 
-  <section class="m-20">
-    <div class="flex justify-center bg-purple-900 px-12 py-12 rounded-lg">
+  <section class="m-24">
+    <div class="flex justify-center bg-purple-900 px-20 py-24 rounded-lg">
       <div class="flex flex-col items-center text-center gap-6">
         <h2 class="text-5xl text-white font-bold max-w-2xl">
           Starting with Martex is easy, fast and free
@@ -1028,7 +1002,10 @@
         <button class="px-6 py-3 bg-pink-600 border border-transparent hover:border-white hover:bg-purple-900 text-white rounded-md font-medium transition">
           Get Started For Free
         </button>
-        <h6 class="text-white text-md">
+        <h6 class="flex text-white text-md">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>   
           Free for 14 days, no credit card required.
         </h6>
       </div>
@@ -1114,13 +1091,25 @@
           </li>
         </ul>
         <ul class="list-none text-gray-500 text-xl">
-          <li>Privacy Policy</li>
+          <li>
+            <a href="/privacy.html">
+              Privacy Policy
+            </a>
+          </li>
         </ul>
         <ul class="list-none text-gray-500 text-xl">
-          <li>Cookie Policy</li>
+          <li>
+            <a href="/cookies.html">
+              Cookie Policy
+            </a>
+          </li>
         </ul>
         <ul class="list-none text-gray-500 text-xl">
-          <li>Site Map</li>
+          <li>
+            <a href="/index.html">
+              Community
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -1129,16 +1118,11 @@
           Follow the Best
         </label>
         <div class="relative">
-          <input
-            type="email"
-            id="email"
-            placeholder="Email Address"
-            class="w-full bg-gray-100 rounded-md pl-5 pr-14 py-4 text-xl text-gray-700"
-          />
-          <button
-            class="absolute text-lg right-2 top-1/2 -translate-y-1/2 bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full transition"
-          >
-            →
+          <input type="email" id="email" placeholder="Email Address" class="w-full bg-gray-100 rounded-md pl-5 pr-14 py-4 text-xl text-gray-700"/>
+          <button class="absolute right-4 top-1/2 -translate-y-1/2 text-pink-500">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+            </svg>            
           </button>
         </div>
       </div>
