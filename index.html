@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Martex Clone</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./slidingDoor.config.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="./flaticon.css" rel="stylesheet">
   <style>
@@ -29,7 +30,7 @@
   <script>lucide.createIcons();</script>
 </head>
 
-<body class="">
+<body class="bg-white dark:bg-black transition-colors duration-300 dark:bg-black transition-colors duration-300">
   <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-transparent transition-all duration-300 z-50">
     <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
       <div class="flex items-center gap-12">
@@ -120,9 +121,15 @@
     </div>
   </div>
 
+  <button id="themeBtn" class="fixed right-0 top-16 z-[100] w-14 h-14 bg-pink-500 text-white rounded-l-lg shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+      <path id="themeIcon" stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+    </svg>    
+  </button>
+
   <section class="py-24 bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 text-white relative overflow-hidden">
-    <div class="grid grid-cols-2 items-center gap-4">
-      <div class="pl-24 flex flex-col justify-center items-center gap-6">
+    <div class="group slidingDoor grid grid-cols-2 items-center gap-4">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right pl-24 flex flex-col justify-center items-center gap-6">
         <h1 class="text-6xl font-bold text-white leading-tight">
           Content is the key to building an audience
         </h1>
@@ -141,7 +148,7 @@
           No credit card needed, free 14-day trial
         </p>
       </div>
-      <div>
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/hero-1-img.png"
             alt="Hero Image"
             class="w-full">
@@ -149,65 +156,65 @@
     </div>
   </section>
 
-  <section class="m-24">
+  <section class="px-24 py-24">
     <div class="flex flex-col justify-center items-center mx-auto px-6 text-center gap-10">
-      <h2 class="text-5xl font-bold text-gray-700 w-2/3">
+      <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300 w-2/3">
         Build a customer-centric marketing strategy
       </h2>
 
-      <p class="text-2xl text-gray-500 font-semibold">
+      <p class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 font-semibold">
         Ligula risus auctor tempus magna feugiat lacinia.
       </p>
 
       <div class="grid grid-cols-4 gap-12">
 
-        <div>
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
           <div class="flex justify-center ">
               <img src="assests/logos/Screenshot 2026-03-20 142521.png" alt="Market Researchs" class="bg-transparent" />
           </div>
-          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 mb-3">
             Market Researchs
           </h5>
-          <p class="text-xl text-gray-500">
+          <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
         </div>
 
-        <div>
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
           <div class="flex justify-center ">
             <img src="assests/logos/Screenshot 2026-03-20 142550.png" alt="User Experience" class="bg-transparent" />
           </div>
-          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 mb-3">
             User Experience
           </h5>
-          <p class="text-xl text-gray-500 leading-relaxed">
+          <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300 leading-relaxed">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
         </div>
 
-        <div>
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
           <div class="flex justify-center ">
             <img src="assests/logos/Screenshot 2026-03-20 142602.png" alt="Digital Marketing" class="bg-transparent" />
           </div>
-          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 mb-3">
             Digital Marketing
           </h5>
-          <p class="text-xl text-gray-500 leading-relaxed">
+          <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300 leading-relaxed">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
         </div>
 
-        <div>
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
           <div class="flex justify-center ">
             <img src="assests/logos/Screenshot 2026-03-20 142624.png" alt="SEO Services" class="bg-transparent" />
           </div>
-          <h5 class="text-2xl font-semibold text-gray-700 mb-3">
+          <h5 class="text-2xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 mb-3">
             SEO Services
           </h5>
-          <p class="text-xl text-gray-500 leading-relaxed">
+          <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300 leading-relaxed">
             Luctus augue egestas undo ultrice
             and quisque lacus
           </p>
@@ -219,31 +226,31 @@
 
   <div class="w-full my-24 border border-gray-100"></div>
 
-  <section class="m-24">     
-    <div class="grid grid-cols-2 items-center gap-8">
-      <div class="relative">
+  <section class="px-24 py-24">     
+    <div class="group slidingDoor grid grid-cols-2 items-center gap-8">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right relative">
         <img 
           src="https://martex-tailwindcss.ibthemespro.com/images/img-10.png" 
           alt="Engagement Image"
           class=""
         >
       </div>
-      <div class="flex flex-col gap-6 justify-center">
-        <p class="text-lg font-semibold text-gray-500 uppercase">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex flex-col gap-6 justify-center">
+        <p class="text-lg font-semibold text-gray-500 dark:text-white transition-colors duration-300 uppercase">
           Enhance Engagement
         </p>
-        <h2 class="text-5xl font-bold text-gray-700 leading-tight w-2/3">
+        <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight w-2/3">
           Engage your most valuable visitors
         </h2>
-        <p class="text-xl text-gray-500 leading-relaxed">
+        <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300 leading-relaxed">
           Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque 
           auctor turpis vitae dolor luctus placerat magna and ligula cursus purus 
           vitae purus an ipsum suscipit.
         </p>
-        <h4 class="text-3xl font-semibold text-gray-700">
+        <h4 class="text-3xl font-semibold text-gray-700 dark:text-white transition-colors duration-300">
           Digits that define growth
         </h4>
-        <ul class="flex flex-col gap-4 list-disc text-gray-500 text-xl">
+        <ul class="flex flex-col gap-4 list-disc text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li class="">
             <P>
               Sapien quaerat tempor an ipsum laoreet purus and sapien dolor an 
@@ -261,26 +268,26 @@
     </div>
   </section>
 
-  <section class="m-24">
-    <div class="grid grid-cols-2 items-center gap-8">
-      <div class="flex flex-col gap-4">
-        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">
+  <section class="px-24 py-24">
+    <div class="group slidingDoor grid grid-cols-2 items-center gap-8">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right flex flex-col gap-4">
+        <h4 class="text-3xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
           Solution that grows with you
         </h4>
-        <p class="text-gray-500 text-xl leading-relaxed ">
+        <p class="text-gray-500 dark:text-white transition-colors duration-300 text-xl leading-relaxed ">
           Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque
           auctor turpis vitae dolor luctus placerat magna and ligula cursus purus
           vitae purus an ipsum suscipit
         </p>
-        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">
+        <h4 class="text-3xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
           Connect your data sources
         </h4>
-        <p class="text-gray-500 text-xl leading-relaxed ">
+        <p class="text-gray-500 dark:text-white transition-colors duration-300 text-xl leading-relaxed ">
           Tempor sapien sodales quaerat ipsum undo congue laoreet turpis neque
           auctor turpis vitae dolor luctus placerat magna and ligula cursus purus
           an ipsum vitae suscipit purus
         </p>
-        <ul class="flex flex-col gap-4 list-disc text-gray-500 text-xl">
+        <ul class="flex flex-col gap-4 list-disc text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li class="">
             <p>
               Tempor sapien quaerat an ipsum laoreet purus and sapien dolor an
@@ -296,7 +303,7 @@
         </ul>
       </div>
 
-      <div class="relative flex justify-center">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left relative flex justify-center">
         <img 
           src="https://martex-tailwindcss.ibthemespro.com/images/img-06.png
           " 
@@ -307,20 +314,20 @@
     </div>
   </section>
   
-  <section class="m-24">
+  <section class="px-24 py-24">
     <div class="flex flex-col justify-center items-center text-center w-2/3 mx-auto gap-8">
-      <h2 class="text-6xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-6xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
         Reach your audience through social media marketing
       </h2>
-      <p class="text-2xl text-gray-500 font-semibold">
+      <p class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 font-semibold">
         Ligula risus auctor tempus magna feugiat lacinia.
       </p>
     </div> 
 
-    <div class="grid grid-cols-2 gap-10 mt-20">
-      <div class="flex flex-col justify-center items-center text-center bg-gray-100 rounded-xl p-10 relative overflow-hidden gap-6">
-        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">Marketing Integrations</h4>
-        <p class="text-gray-500 text-xl leading-relaxed ">
+    <div class="group slidingDoor grid grid-cols-2 gap-10 mt-20">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right flex flex-col justify-center items-center text-center bg-gray-100 dark:bg-black transition-colors duration-300 rounded-xl p-10 relative overflow-hidden gap-6">
+        <h4 class="text-3xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">Marketing Integrations</h4>
+        <p class="text-gray-500 dark:text-white transition-colors duration-300 text-xl leading-relaxed ">
           Aliquam a augue suscipit luctus diam neque purus ipsum neque and dolor primis libero
         </p>
         <div class="rounded-2xl">
@@ -331,47 +338,47 @@
         </div>
       </div>
 
-      <div class="flex flex-col justify-center items-center text-center bg-gray-100 rounded-xl p-10 relative overflow-hidden gap-6">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex flex-col justify-center items-center text-center bg-gray-100 dark:bg-black transition-colors duration-300 rounded-xl p-10 relative overflow-hidden gap-6">
         <div class="rounded-2xl">
           <img 
             src="https://martex-tailwindcss.ibthemespro.com/images/f_04.png" 
             alt="Feature Image 2"
           />
         </div>
-        <h4 class="text-3xl font-semibold text-gray-700 leading-tight">Productivity Focused</h4>
-        <p class="text-gray-500 text-xl leading-relaxed ">
+        <h4 class="text-3xl font-semibold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">Productivity Focused</h4>
+        <p class="text-gray-500 dark:text-white transition-colors duration-300 text-xl leading-relaxed ">
           Aliquam a augue suscipit luctus diam neque purus ipsum neque and dolor primis libero
         </p>
       </div>
     </div>
   </section>
 
-  <section class="m-24 bg-white" id="stats-section">
+  <section class="px-24 py-24 bg-white dark:bg-black transition-colors duration-300" id="stats-section">
     <div class="max-w-7xl mx-auto px-6">   
       <div class="grid md:grid-cols-3 gap-12 text-center">
-        <div class="flex gap-4">
-          <h3 class="text-5xl font-bold text-gray-700">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex gap-4">
+          <h3 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300">
             <span class="counter" data-target="89000">0</span>
           </h3>
-          <p class="mt-3 text-gray-500 text-xl">
+          <p class="mt-3 text-gray-500 dark:text-white transition-colors duration-300 text-xl">
             Porta justo integer and velna vitae auctor
           </p>
         </div>
 
-        <div class="flex gap-4">
-          <h3 class="text-5xl font-bold text-gray-700">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex gap-4">
+          <h3 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300">
             <span class="counter" data-target="76">0</span>%
           </h3>
-          <p class="mt-3 text-gray-500 text-xl">
+          <p class="mt-3 text-gray-500 dark:text-white transition-colors duration-300 text-xl">
             Ligula magna suscipit vitae and rutrum
           </p>
         </div>
 
-        <div class="flex gap-4">
-          <h3 class="text-5xl font-bold text-gray-700">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex gap-4">
+          <h3 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300">
             <span class="counter" data-target="4.93" data-decimal="true">0</span>
           </h3>
-          <p class="mt-3 text-gray-500 text-xl">
+          <p class="mt-3 text-gray-500 dark:text-white transition-colors duration-300 text-xl">
             Sagittis congue augue egestas an egestas
           </p>
         </div>
@@ -381,26 +388,26 @@
 
   <div class="border border-gray-100 w-full"></div>
 
-  <section class="m-24">
-    <div class="grid grid-cols-2 gap-8 items-center">
-      <div class="bg-white rounded-3xl p-10 relative overflow-hidden">
+  <section class="px-24 py-24">
+    <div class="group slidingDoor grid grid-cols-2 gap-8 items-center">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right bg-white dark:bg-black transition-colors duration-300 rounded-3xl p-10 relative overflow-hidden">
           <img 
             src="https://martex-tailwindcss.ibthemespro.com/images/img-03.png" 
             alt="Feature Image 2"
           />
       </div>
-      <div class="flex flex-col gap-6">
-        <h4 class="text-3xl font-bold text-gray-700">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex flex-col gap-6">
+        <h4 class="text-3xl font-bold text-gray-700 dark:text-white transition-colors duration-300">
           The smarter way to work
         </h4>
-        <p class="text-xl text-gray-500 leading-relaxed">
+        <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300 leading-relaxed">
           Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque
           auctor turpis vitae dolor luctus placerat magna and ligula cursus purus.
         </p>
-        <h4 class="text-3xl font-bold text-gray-700 ">
+        <h4 class="text-3xl font-bold text-gray-700 dark:text-white transition-colors duration-300 ">
           Full access to all features
         </h4>
-        <ul class="text-xl list-disc text-gray-500 ">
+        <ul class="text-xl list-disc text-gray-500 dark:text-white transition-colors duration-300 ">
           <li class="">
             Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis sodales magna undo aoreet primis
           </li>
@@ -415,19 +422,19 @@
     </div>
   </section>
 
-  <section class="m-24">
-    <div class="grid grid-cols-2 gap-10 items-center">
-      <div class="flex flex-col gap-6">
-        <p class="text-xl font-semibold text-gray-500 uppercase">
+  <section class="px-24 py-24">
+    <div class="group slidingDoor grid grid-cols-2 gap-10 items-center">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right flex flex-col gap-6">
+        <p class="text-xl font-semibold text-gray-500 dark:text-white transition-colors duration-300 uppercase">
           One-Stop Solution
         </p>
-        <h2 class="text-5xl font-bold text-gray-700">
+        <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300">
           Smart solutions, real-time results
         </h2>
-        <p class="text-xl text-gray-500">
+        <p class="text-xl text-gray-500 dark:text-white transition-colors duration-300">
           Sodales tempor sapien quaerat ipsum and congue undo laoreet turpis neque auctor turpis vitae dolor luctus placerat magna ligula and cursus vitae
         </p>
-        <ul class="flex flex-col gap-4 text-xl text-gray-500">
+        <ul class="flex flex-col gap-4 text-xl text-gray-500 dark:text-white transition-colors duration-300">
           <li class="flex items-start gap-3">
             <span class="text-pink-500 mt-1">✓</span>
             <p>Magna dolor luctus at egestas sapien</p>
@@ -445,43 +452,43 @@
         </ul>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-8">
-        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left grid sm:grid-cols-2 gap-8">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up bg-white dark:bg-black transition-colors duration-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
           <div class="w-16 h-16 flex items-center justify-center ">
             <img alt="" src="/assests/logos/Screenshot 2026-03-20 160339.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Content Marketing</h3>
-          <p class="text-gray-500">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300">
             Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor
           </p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up bg-white dark:bg-black transition-colors duration-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
           <div class="w-16 h-16 flex items-center justify-center ">
             <img alt="" src="/assests/logos/Screenshot 2026-03-20 160351.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Pay Per Click (PPC)</h3>
-          <p class="text-gray-500">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300">
             Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor
           </p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up bg-white dark:bg-black transition-colors duration-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
           <div class="w-16 h-16 flex items-center justify-center ">
             <img alt="" src="/assests/logos/Screenshot 2026-03-20 160420.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Video Marketing</h3>
-          <p class="text-gray-500">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300">
             Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor
           </p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
+        <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up bg-white dark:bg-black transition-colors duration-300 rounded-3xl p-8 shadow-lg hover:shadow-xl transition">
           <div class="w-16 h-16 flex items-center justify-center ">
             <img alt="" src="/assests/logos/Screenshot 2026-03-20 160434.png" />
           </div>
           <h3 class="text-xl font-semibold mb-3">Business Analytics</h3>
-          <p class="text-gray-500">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300">
             Porta semper lacus and cursus feugiat at primis ultrice a ligula auctor
           </p>
         </div>
@@ -489,9 +496,9 @@
     </div>
   </section>
 
-  <section class="m-24">
-    <div class="grid grid-cols-2 gap-16">
-      <div class="flex justify-center">
+  <section class="px-24 py-24">
+    <div class="group slidingDoor grid grid-cols-2 gap-16">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right flex justify-center">
         <img 
           src="https://martex-tailwindcss.ibthemespro.com/images/img-02.png" 
           alt="Integration Tools" 
@@ -499,14 +506,14 @@
         >
       </div>
 
-      <div class="flex flex-col justify-center gap-8">
-        <p class="text-gray-500 text-lg font-semibold uppercase tracking-wider ">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex flex-col justify-center gap-8">
+        <p class="text-gray-500 dark:text-white transition-colors duration-300 text-lg font-semibold uppercase tracking-wider ">
           Easy Integration
         </p>
-        <h2 class="text-5xl font-bold text-gray-700 leading-tight ">
+        <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight ">
           Plug your essential tools in few clicks
         </h2>
-        <ul class="flex flex-col gap-4 text-gray-500 text-xl list-disc">
+        <ul class="flex flex-col gap-4 text-gray-500 dark:text-white transition-colors duration-300 text-xl list-disc">
           <li class="">
             Cursus purus suscipit vitae cubilia magnis volute egestas vitae sapien turpis sodales magna undo aoreet primis
           </li>
@@ -518,12 +525,12 @@
     </div>
   </section>
 
-  <section class="bg-gray-100 mb-12">
+  <section class="bg-gray-100 dark:bg-black transition-colors duration-300 mb-12">
     <div class="text-center max-w-2xl mx-auto pt-16">
-      <h2 class="text-5xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
         Track the progress towards objectives with key results
       </h2>
-      <h4 class="text-2xl text-gray-500 bg-transparent leading-tight my-10">
+      <h4 class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 bg-transparent leading-tight my-10">
         Ligula risus auctor tempus magna feugiat lacinia.
       </h4>
     </div>
@@ -539,7 +546,7 @@
 
   <section>
     <div class="text-center max-w-2xl mx-auto">
-      <h4 class="text-2xl font-bold text-gray-700 bg-transparent leading-tight pt-10">
+      <h4 class="text-2xl font-bold text-gray-700 dark:text-white transition-colors duration-300 bg-transparent leading-tight pt-10">
         Martex is loved and trusted by thousands:
       </h4>
     </div>
@@ -569,52 +576,52 @@
     </div>
   </section>
 
-  <section class="bg-white m-24">
+  <section class="bg-white dark:bg-black transition-colors duration-300 px-24 py-24">
     <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-5xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
         The Complete Solutions
       </h2>
-      <h4 class="text-2xl text-gray-500 bg-transparent leading-tight my-10">
+      <h4 class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 bg-transparent leading-tight my-10">
         Ligula risus auctor tempus magna feugiat lacinia.
       </h4>
     </div>
 
     <div class="flex justify-center gap-16 max-w-6xl mx-auto">
-      <div class="flex flex-col items-center text-center max-w-sm ">
-        <div class="bg-gray-100 p-8 rounded-2xl flex justify-center">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center text-center max-w-sm ">
+        <div class="bg-gray-100 dark:bg-black transition-colors duration-300 p-8 rounded-2xl flex justify-center">
           <img alt="Intuitive Dashboard" src="https://martex-tailwindcss.ibthemespro.com/images/f_01.png" class="w-72">
         </div>
         <div class="text-center max-w-2xl mx-auto">
-          <h2 class="text-xl font-semibold mt-6 font-bold text-gray-700 leading-tight">
+          <h2 class="text-xl font-semibold mt-6 font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
             Intuitive Dashboard
           </h2>
-          <h4 class="text-gray-500 mt-4 bg-transparent leading-tight my-10">
+          <h4 class="text-gray-500 dark:text-white transition-colors duration-300 mt-4 bg-transparent leading-tight my-10">
             Luctus egestas augue undo ultrice aliquam in lacus congue dapibus
           </h4>
         </div>
       </div>
-      <div class="flex flex-col items-center text-center max-w-sm">
-        <div class="bg-gray-100 p-8 rounded-2xl flex justify-center">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center text-center max-w-sm">
+        <div class="bg-gray-100 dark:bg-black transition-colors duration-300 p-8 rounded-2xl flex justify-center">
           <img alt="Effortless Integration" src="https://martex-tailwindcss.ibthemespro.com/images/f_05.png" class="w-72">
         </div>
         <div class="text-center max-w-2xl mx-auto">
-          <h2 class="text-xl font-semibold mt-6 font-bold text-gray-700 leading-tight">
+          <h2 class="text-xl font-semibold mt-6 font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
             Effortless Integration
           </h2>
-          <h4 class="text-gray-500 mt-4 bg-transparent leading-tight my-10">
+          <h4 class="text-gray-500 dark:text-white transition-colors duration-300 mt-4 bg-transparent leading-tight my-10">
             Tempor laoreet augue undo ultrice aliquam in lacusq luctus feugiat
           </h4>
         </div>
       </div>
-      <div class="flex flex-col items-center text-center max-w-sm">
-        <div class="bg-gray-100 p-8 rounded-2xl flex justify-center">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center text-center max-w-sm">
+        <div class="bg-gray-100 dark:bg-black transition-colors duration-300 p-8 rounded-2xl flex justify-center">
           <img alt="Engagement Analysis" src="https://martex-tailwindcss.ibthemespro.com/images/f_02.png" class="w-72">
         </div>
         <div class="text-center max-w-2xl mx-auto">
-          <h2 class="text-xl font-semibold mt-6 font-bold text-gray-700 leading-tight">
+          <h2 class="text-xl font-semibold mt-6 font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
             Engagement Analysis
           </h2>
-          <h4 class="text-gray-500 mt-4 bg-transparent leading-tight my-10">
+          <h4 class="text-gray-500 dark:text-white transition-colors duration-300 mt-4 bg-transparent leading-tight my-10">
             Egestas luctus augue undo ultrice aliquam in lacus feugiat cursus
           </h4>
         </div>
@@ -622,18 +629,18 @@
     </div>
   </section>
 
-  <section class="grid grid-cols-2 m-24">
-    <div class="flex flex-col gap-8">
-      <p class="text-gray-500 text-lg font-semibold uppercase tracking-wider ">
+  <section class="group slidingDoor grid grid-cols-2 px-24 py-24">
+    <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right flex flex-col gap-8">
+      <p class="text-gray-500 dark:text-white transition-colors duration-300 text-lg font-semibold uppercase tracking-wider ">
         Productivity Focused
       </p>
-      <h2 class="text-5xl font-bold text-gray-700 leading-tight ">
+      <h2 class="text-5xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight ">
         Achieve more with better workflows
       </h2>
-      <p class="text-gray-500 text-xl leading-relaxed ">
+      <p class="text-gray-500 dark:text-white transition-colors duration-300 text-xl leading-relaxed ">
         Sodales tempor sapien quaerat ipsum undo congue laoreet turpis neque auctor turpis vitae dolor luctus placerat magna and ligula cursus purus vitae purus an ipsum suscipit
       </p>
-      <ul class="space-y-4 text-gray-500 text-xl">
+      <ul class="space-y-4 text-gray-500 dark:text-white transition-colors duration-300 text-xl">
         <li class="flex items-start gap-3">
           <div class="text-pink-500">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -660,7 +667,7 @@
         </li>
       </ul>
     </div>
-    <div class="">
+    <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left">
       <img 
         src="https://martex-tailwindcss.ibthemespro.com/images/img-13.png" 
         alt="Integration Tools" 
@@ -669,13 +676,13 @@
     </div>
   </section>
 
-  <section class="m-24">
+  <section class="px-24 py-24">
     <div class="flex flex-col gap-8 justify-center items-center text-center w-2/3 mx-auto">
-      <h2 class="text-4xl lg:text-6xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-4xl lg:text-6xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
         Discover insights across all your data with Martex
       </h2>
 
-      <h4 class="text-2xl text-gray-500 bg-transparent leading-tight my-10">
+      <h4 class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 bg-transparent leading-tight my-10">
         Ligula risus auctor tempus magna feugiat lacinia.
       </h4>
     </div>
@@ -688,10 +695,10 @@
       >
     </div>
     <div class="flex flex-col items-center mt-10">
-      <button class="px-6 py-2 font-semibold text-gray-700 border border-black rounded-lg hover:border-transparent hover:bg-pink-600 hover:text-white transition duration-300">
+      <button class="px-6 py-2 font-semibold text-gray-700 dark:text-white transition-colors duration-300 border border-black rounded-lg hover:border-transparent hover:bg-pink-600 hover:text-white transition duration-300">
         Monitor Your Activity
       </button>
-      <div class="flex gap-4 justify-center mt-4 text-xl text-gray-500">
+      <div class="flex gap-4 justify-center mt-4 text-xl text-gray-500 dark:text-white transition-colors duration-300">
         <span>Free 14 days trial</span>
         <span>|</span>
         <span> Exclusive Support</span>
@@ -701,155 +708,155 @@
     </div>
   </section>
 
-  <section class="m-24">
-    <div class="grid grid-cols-2 gap-6">
-      <div class="relative">
+  <section class="px-24 py-24">
+    <div class="group slidingDoor grid grid-cols-2 gap-6">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right relative">
         <img 
           src="https://martex-tailwindcss.ibthemespro.com/images/img-09.png" 
           alt="Engagement Image"
           class=""
         >
       </div>
-      <div class="flex flex-col justify-center gap-8">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex flex-col justify-center gap-8">
         <div class="flex space-x-6 items-start">
-          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
+          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white dark:bg-black transition-colors duration-300 hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
             1
           </button>
           <div>
             <h3 class="text-3xl font-semibold  mb-4">Register in 30 seconds</h3>
-            <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
+            <h5 class="text-gray-500 dark:text-white transition-colors duration-300 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
           </div>
         </div>
         <div class="flex space-x-6 items-start">
-          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
+          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white dark:bg-black transition-colors duration-300 hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
             2
           </button>
           <div>
             <h3 class="text-3xl font-semibold  mb-4">Customizable Dashboards</h3>
-            <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
+            <h5 class="text-gray-500 dark:text-white transition-colors duration-300 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
           </div>
         </div>
         <div class="flex space-x-6 items-start">
-          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
+          <button class="px-4 py-2 bg-pink-600 text-white text-2xl font-bold border border-pink-600 border-2 rounded-full hover:bg-white dark:bg-black transition-colors duration-300 hover:text-pink-600 hover:scale-105 transition duration-300 shrink-0">
             3
           </button>
           <div>
             <h3 class="text-3xl font-semibold  mb-4">Improved Productivity</h3>
-            <h5 class="text-gray-500 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
+            <h5 class="text-gray-500 dark:text-white transition-colors duration-300 text-xl">Ligula risus auctor tempus feugiat dolor lacinia nemo purus in lipsum purus sapien quaerat a primis viverra tellus vitae luctus dolor ipsum neque ligula quaerat</h5>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-gray-100 py-24">
+  <section class="bg-gray-100 dark:bg-black transition-colors duration-300 py-24">
     <div class="flex flex-col justify-center items-center gap-10">
-      <h2 class="text-6xl text-gray-700 text-center font-bold w-1/2">Here’s what our amazing clients are saying</h2>
-      <h4 class="text-2xl text-gray-500 ">Ligula risus auctor tempus magna feugiat lacinia.</h4>
+      <h2 class="text-6xl text-gray-700 dark:text-white transition-colors duration-300 text-center font-bold w-1/2">Here’s what our amazing clients are saying</h2>
+      <h4 class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 ">Ligula risus auctor tempus magna feugiat lacinia.</h4>
     </div>
     <div class="max-w-7xl mx-auto px-6 mt-10">
       <div id="review-carousel" class="flex gap-6 overflow-x-auto scroll-smooth pb-8 pt-4">
 
-        <div id="card-1" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-1" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             Etiam sapien sagittis congue augue a massa varius egestas ultrice varius magna a tempus aliquet undo cursus suscipit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-1" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-1.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Scott Boxer</h4>
-              <p class="text-lg text-gray-500">@scott boxer</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Scott Boxer</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">@scott boxer</p>
             </div>
           </div>
         </div>
 
-        <div id="card-2" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-2" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             At sagittis congue augue diam egestas magna an ipsum vitae purus ipsum primis and cubilia laoreet augue egestas a luctus donec Itrice ligula porta augue magna suscipit lectus. gestas                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-2" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-2.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Joel Peterson</h4>
-              <p class="text-lg text-gray-500">Internet Surfer</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Joel Peterson</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Internet Surfer</p>
             </div>
           </div>
         </div>
 
-        <div id="card-3" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-3" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             Mauris gestas magnis a sapien etiam sapien congue an augue egestas and ultrice vitae purus diam an integer congue magna ligula egestas magna suscipit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-3" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-3.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Marisol19</h4>
-              <p class="text-lg text-gray-500">@marisol19</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Marisol19</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">@marisol19</p>
             </div>
           </div>
         </div>
 
-        <div id="card-4" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-4" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             Mauris donec a magnis sapien etiam pretium a congue augue volutpat lectus aenean magna and undo mauris lectus laoreet tempor egestas rutrum                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-4" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-4.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Leslie D.</h4>
-              <p class="text-lg text-gray-500">Web Developer</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Leslie D.</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Web Developer</p>
             </div>
           </div>
         </div>
 
-        <div id="card-5" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-5" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             An augue cubilia undo laoreet magna suscipit egestas ipsum lectus purus ipsum and primis augue an ultrice ligula egestas suscipit a lectus gestas auctor tempus feugiat impedit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-5" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-5.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Jennifer Harper</h4>
-              <p class="text-lg text-gray-500">App Developer</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Jennifer Harper</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">App Developer</p>
             </div>
           </div>
         </div>
 
-        <div id="card-6" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-6" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             An augue cubilia laoreet undo magna ipsum semper suscipit egestas magna ipsum ligula a vitae purus and ipsum primis cubilia magna suscipit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-6" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-6.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Jonathan Barnes</h4>
-              <p class="text-lg text-gray-500">jQuery Programmer</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Jonathan Barnes</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">jQuery Programmer</p>
             </div>
           </div>
         </div>
 
-        <div id="card-7" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-7" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             Augue egestas porta tempus volutpat. egestas augue cubilia laoreet a magna suscipit luctus dolor blandit vitae purus neque tempus an aliquet porta gestas rutrum blandit vitae                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-7" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-7.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Mike Harris</h4>
-              <p class="text-lg text-gray-500">Graphic Designer</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Mike Harris</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Graphic Designer</p>
             </div>
           </div>
         </div>
 
-        <div id="card-8" class="bg-white rounded-xl shadow-md p-6 w-80 flex-shrink-0">
-          <p class="text-gray-500 ">
+        <div id="card-8" class="bg-white dark:bg-black transition-colors duration-300 rounded-xl shadow-md p-6 w-80 flex-shrink-0">
+          <p class="text-gray-500 dark:text-white transition-colors duration-300 ">
             Augue at vitae purus tempus egestas volutpat augue undo cubilia laoreet magna suscipit luctus dolor blandit at purus tempus feugiat impedit                
           </p>
           <div class="flex items-center gap-4">
             <img alt="review-img-8" src="https://martex-tailwindcss.ibthemespro.com/images/review-author-8.jpg" class="w-12 h-12 rounded-full"/>
             <div>
-              <h4 class="font-semibold text-gray-700">Evelyn Martinez</h4>
-              <p class="text-lg text-gray-500">WordPress Consultant</p>
+              <h4 class="font-semibold text-gray-700 dark:text-white transition-colors duration-300">Evelyn Martinez</h4>
+              <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">WordPress Consultant</p>
             </div>
           </div>
         </div>
@@ -857,80 +864,80 @@
     </div>
   </section>
 
-  <section class="m-24">
-    <h4 class="text-center text-gray-500 text-2xl font-bold mb-12">
+  <section class="px-24 py-24">
+    <h4 class="text-center text-gray-500 dark:text-white transition-colors duration-300 text-2xl font-bold mb-12">
       Our clients love us as much as we love them
     </h4>
     <div class="max-w-5xl mx-auto grid grid-cols-3 gap-10 items-center text-center">
-      <div class="flex flex-col items-center gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center gap-4">
         <img alt="brand-21" src="https://martex-tailwindcss.ibthemespro.com/images/brand-21.png" class="h-10 object-contain">
-        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+        <div class="flex items-center gap-2 bg-gray-100 dark:bg-black transition-colors duration-300 px-4 py-1 rounded-full">
           <span class="text-yellow-400">★★★★★</span>
-          <span class="text-gray-500 text-lg font-semibold">4.7/5</span>
+          <span class="text-gray-500 dark:text-white transition-colors duration-300 text-lg font-semibold">4.7/5</span>
         </div>
       </div>
 
-      <div class="flex flex-col items-center gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center gap-4">
         <img alt="brand-22" src="https://martex-tailwindcss.ibthemespro.com/images/brand-22.png" class="h-10 object-contain">
-        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+        <div class="flex items-center gap-2 bg-gray-100 dark:bg-black transition-colors duration-300 px-4 py-1 rounded-full">
           <span class="text-yellow-400">★★★★★</span>
-          <span class="text-gray-500 text-lg font-semibold">4.95/5</span>
+          <span class="text-gray-500 dark:text-white transition-colors duration-300 text-lg font-semibold">4.95/5</span>
         </div>
       </div>
 
-      <div class="flex flex-col items-center gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center gap-4">
         <img alt="brand-23" src="https://martex-tailwindcss.ibthemespro.com/images/brand-23.png" class="h-10 object-contain">
-        <div class="flex items-center gap-2 bg-gray-100 px-4 py-1 rounded-full">
+        <div class="flex items-center gap-2 bg-gray-100 dark:bg-black transition-colors duration-300 px-4 py-1 rounded-full">
           <span class="text-yellow-400">★★★★★</span>
-          <span class="text-gray-500 text-lg font-semibold">4.24/5</span>
+          <span class="text-gray-500 dark:text-white transition-colors duration-300 text-lg font-semibold">4.24/5</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-gray-100 m-24 rounded-xl">
+  <section class="bg-gray-100 dark:bg-black transition-colors duration-300 px-24 py-24 rounded-xl">
     <div class="flex flex-col justify-center items-center text-center w-2/3 mx-auto pt-20 gap-10">
-      <h2 class="text-6xl font-bold text-gray-700 leading-tight">
+      <h2 class="text-6xl font-bold text-gray-700 dark:text-white transition-colors duration-300 leading-tight">
         Automate your workflow with our integrations
       </h2>
-      <h4 class="text-2xl text-gray-500">
+      <h4 class="text-2xl text-gray-500 dark:text-white transition-colors duration-300">
         Ligula risus auctor tempus magna feugiat lacinia.
       </h4>
     </div>
     <div class="grid grid-cols-5 mt-16 gap-6 mx-auto max-w-5xl">
-      <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white dark:bg-black transition-colors duration-300 px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
           <img alt="tool-1" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-1.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-lg font-medium mt-3">Zapier</span>
+        <span class="text-gray-700 dark:text-white transition-colors duration-300 text-lg font-medium mt-3">Zapier</span>
       </div>
 
-      <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white dark:bg-black transition-colors duration-300 px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
           <img alt="tool-2" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-2.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-lg font-medium mt-3">Google Analytics</span>
+        <span class="text-gray-700 dark:text-white transition-colors duration-300 text-lg font-medium mt-3">Google Analytics</span>
       </div>
 
-      <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white dark:bg-black transition-colors duration-300 px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
           <img alt="tool-3" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-3.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-lg font-medium mt-3">Amplitude</span>
+        <span class="text-gray-700 dark:text-white transition-colors duration-300 text-lg font-medium mt-3">Amplitude</span>
       </div>
       
-      <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white dark:bg-black transition-colors duration-300 px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
           <img alt="tool-4" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-4.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-lg font-medium mt-3">Hubspot</span>
+        <span class="text-gray-700 dark:text-white transition-colors duration-300 text-lg font-medium mt-3">Hubspot</span>
       </div>
       
-      <div class="flex flex-col items-center">
-        <div class="flex flex-col items-center bg-white px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col items-center">
+        <div class="flex flex-col items-center bg-white dark:bg-black transition-colors duration-300 px-16 py-10 rounded-xl shadow-sm hover:shadow-lg transition">
           <img alt="tool-5" src="https://martex-tailwindcss.ibthemespro.com/images/png_icons/tool-5.png" class="h-14">
         </div>
-        <span class="text-gray-700 text-lg font-medium mt-3">MailChimp</span>
+        <span class="text-gray-700 dark:text-white transition-colors duration-300 text-lg font-medium mt-3">MailChimp</span>
       </div>
     </div>
     <div class="flex justify-center mt-16">
@@ -940,57 +947,57 @@
     </div>
   </section>
 
-  <section class="m-24">
-    <div class="flex text-center flex-col m-20">
-      <h2 class="text-7xl text-gray-700 font-semibold">Questions & Answers</h2>
-      <h5 class="text-2xl text-gray-500 pt-8">Ligula risus auctor tempus magna feugiat lacinia.</h5>
+  <section class="px-24 py-24">
+    <div class="flex text-center flex-col px-24 py-24">
+      <h2 class="text-7xl text-gray-700 dark:text-white transition-colors duration-300 font-semibold">Questions & Answers</h2>
+      <h5 class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 pt-8">Ligula risus auctor tempus magna feugiat lacinia.</h5>
     </div>
     <div class="grid grid-cols-2 gap-6">
-      <div id="q1">
+      <div id="q1" class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
         <h3 class="text-3xl font-semibold ">1. Getting started with Martex</h3>
-        <p class=" text-xl text-gray-500">Etiam amet mauris suscipit in odio integer congue metus and vitae arcu mollis blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus blandit and laoreet</p>
+        <p class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">Etiam amet mauris suscipit in odio integer congue metus and vitae arcu mollis blandit ultrice ligula egestas magna suscipit lectus magna suscipit luctus blandit and laoreet</p>
       </div>
 
-      <div id="q2">
+      <div id="q2" class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
         <h3 class="text-3xl font-semibold ">2. What's inside the package?</h3>
-        <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
+        <p class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
       </div>
 
-      <div id="q3">
+      <div id="q3" class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
         <h3 class="text-3xl font-semibold ">3. How do I choose a plan?</h3>
         <ul class="list-disc">
-          <li class=" text-xl text-gray-500">Fringilla risus, luctus mauris orci auctor purus ligula euismod pretium purus pretium rutrum tempor sapien</li>
-          <li class=" text-xl text-gray-500">Nemo ipsam egestas volute undo turpis purus lipsum primis aliquam sapien quaerat sodales pretium a purus</li>
+          <li class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">Fringilla risus, luctus mauris orci auctor purus ligula euismod pretium purus pretium rutrum tempor sapien</li>
+          <li class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">Nemo ipsam egestas volute undo turpis purus lipsum primis aliquam sapien quaerat sodales pretium a purus</li>
         </ul>
       </div>
 
-      <div id="q4">
+      <div id="q4" class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
         <h3 class="text-3xl font-semibold ">4. How does Martex handle my privacy?</h3>
-        <p class=" text-xl text-gray-500">Quaerat sodales sapien euismod blandit purus a purus ipsum primis in cubilia laoreet augue luctus dolor luctus</p>
-        <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec congue metus. Vitae arcu mollis blandit integer nemo volute velna</p>
+        <p class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">Quaerat sodales sapien euismod blandit purus a purus ipsum primis in cubilia laoreet augue luctus dolor luctus</p>
+        <p class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">An enim nullam tempor sapien gravida donec congue metus. Vitae arcu mollis blandit integer nemo volute velna</p>
       </div>
 
-      <div id="q5">
+      <div id="q5" class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
         <h3 class="text-3xl font-semibold ">5. I have an issue with my account</h3>
-        <p class=" text-xl text-gray-500">Cubilia laoreet augue egestas and luctus donec curabite diam vitae dapibus libero and quisque gravida donec neque blandit justo aliquam molestie nunc sapien justo</p>
+        <p class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">Cubilia laoreet augue egestas and luctus donec curabite diam vitae dapibus libero and quisque gravida donec neque blandit justo aliquam molestie nunc sapien justo</p>
       </div>
 
-      <div id="q6">
+      <div id="q6" class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up">
         <h3 class="text-3xl font-semibold ">6. Can I cancel at anytime?</h3>
-        <p class=" text-xl text-gray-500">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
+        <p class=" text-xl text-gray-500 dark:text-white transition-colors duration-300">An enim nullam tempor sapien gravida donec ipsum and enim porta justo integer at velna vitae auctor integer congue undo magna laoreet augue pretium purus pretium ligula</p>
       </div>
     </div>
     <div class="flex justify-center mt-20">
-      <div class="inline-flex items-center gap-2 bg-gray-100 px-12 py-5 rounded-full">
-        <span class="text-xl text-gray-500">Have any questions?</span>
-          <a href="#" class="text-xl font-semibold text-pink-500 underline hover:text-gray-700 transition duration-300">
+      <div class="inline-flex items-center gap-2 bg-gray-100 dark:bg-black transition-colors duration-300 px-12 py-5 rounded-full">
+        <span class="text-xl text-gray-500 dark:text-white transition-colors duration-300">Have any questions?</span>
+          <a href="#" class="text-xl font-semibold text-pink-500 underline hover:text-gray-700 dark:text-white transition-colors duration-300 transition duration-300">
             Get in Touch
           </a>
         </div>
     </div>
   </section>
 
-  <section class="m-24">
+  <section class="px-24 py-24">
     <div class="flex justify-center bg-purple-900 px-20 py-24 rounded-lg">
       <div class="flex flex-col items-center text-center gap-6">
         <h2 class="text-5xl text-white font-bold max-w-2xl">
@@ -1012,103 +1019,86 @@
     </div>
   </section>
 
-  <footer class="m-20">
+  <footer class="px-24 py-24">
     <div class="flex space-x-24">
-      <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-pink.png"
+      <a href="./index.html" class="shrink-0 self-start">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-pink.png"
             alt="Martex Logo"
             class="h-8 object-contain">
+      </a>
       <div class="flex flex-col gap-6">
         <h4 class="text-xl font-bold">Company</h4>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/aboutUs.html">
-              About Us
-            </a>
+            <a href="./aboutUs.html" class="hover:text-gray-800 transition">About Us</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/ourBlogs.html">
-              Our Blogs
-            </a>
+            <a href="./aboutUs.html#team" class="hover:text-gray-800 transition">Careers</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/customers.html">
-              Customers
-            </a>
+            <a href="./ourBlogs.html" class="hover:text-gray-800 transition">Our Blog</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/index.html">
-              Community
-            </a>
+            <a href="./helpCenter.html" class="hover:text-gray-800 transition">Contact Us</a>
           </li>
         </ul>
       </div>
 
       <div class="flex flex-col gap-6">
         <h4 class="text-xl font-bold">Product</h4>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/integration.html">
-              Integration
-            </a>
+            <a href="./integration.html" class="hover:text-gray-800 transition">Integration</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/whatsNew.html">
-              What's New
-            </a>
+            <a href="./customers.html" class="hover:text-gray-800 transition">Customers</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/pricing.html">
-              Pricing
-            </a>
+            <a href="./whatsNew.html" class="hover:text-gray-800 transition">What's New</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/helpCenter.html">
-              Help Center
-            </a>
+            <a href="./pricing.html" class="hover:text-gray-800 transition">Pricing</a>
+          </li>
+        </ul>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li>
+            <a href="./helpCenter.html" class="hover:text-gray-800 transition">Help Center</a>
           </li>
         </ul>
       </div>
 
       <div class="flex flex-col gap-6">
         <h4 class="text-xl font-bold">Legal</h4>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/terms.html">
-              Terms of Use
-            </a>
+            <a href="./terms.html" class="hover:text-gray-800 transition">Terms of Use</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/privacy.html">
-              Privacy Policy
-            </a>
+            <a href="./privacy.html" class="hover:text-gray-800 transition">Privacy Policy</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/cookies.html">
-              Cookie Policy
-            </a>
+            <a href="./cookies.html" class="hover:text-gray-800 transition">Cookie Policy</a>
           </li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
           <li>
-            <a href="/index.html">
-              Community
-            </a>
+            <a href="./index.html" class="hover:text-gray-800 transition">Site Map</a>
           </li>
         </ul>
       </div>
@@ -1118,7 +1108,7 @@
           Follow the Best
         </label>
         <div class="relative">
-          <input type="email" id="email" placeholder="Email Address" class="w-full bg-gray-100 rounded-md pl-5 pr-14 py-4 text-xl text-gray-700"/>
+          <input type="email" id="email" placeholder="Email Address" class="w-full bg-gray-100 dark:bg-black transition-colors duration-300 rounded-md pl-5 pr-14 py-4 text-xl text-gray-700 dark:text-white transition-colors duration-300"/>
           <button class="absolute right-4 top-1/2 -translate-y-1/2 text-pink-500">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -1129,9 +1119,9 @@
     </div>
     <div class="flex justify-between mt-20 overline">
       <div>
-        <h5 class="text-gray-500">© 2025 Martex. All Rights Reserved</h5>
+        <h5 class="text-gray-500 dark:text-white transition-colors duration-300">© 2025 Martex. All Rights Reserved</h5>
       </div>
-      <div class="flex gap-6 text-2xl text-gray-500">
+      <div class="flex gap-6 text-2xl text-gray-500 dark:text-white transition-colors duration-300">
         <a href="#" class="hover:text-blue-600 transition">
           <i class="fa-brands fa-facebook"></i>
         </a>
@@ -1144,7 +1134,7 @@
           <i class="fa-brands fa-youtube"></i>
         </a>
 
-        <a href="#" class="hover:text-gray-700 transition">
+        <a href="#" class="hover:text-gray-700 dark:text-white transition-colors duration-300 transition">
           <i class="fa-brands fa-x-twitter"></i>
         </a>
       </div>
@@ -1180,6 +1170,32 @@
         if (navLogo) navLogo.src = "https://martex-tailwindcss.ibthemespro.com/images/logo-white.png";
       }
     });
+
+  const themeBtn = document.getElementById('themeBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const html = document.documentElement;
+  const moonPath = "M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z";
+  const sunPath = "M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z";
+  function updateIcon() {
+    if (html.classList.contains('dark')) {
+      themeIcon.setAttribute('d', sunPath);
+    } else {
+      themeIcon.setAttribute('d', moonPath);
+    }
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    html.classList.add('dark');
+    updateIcon();
+  }
+  themeBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    updateIcon();
+    if (html.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
 
     const popup = document.getElementById("popup");
     const closeBtn = document.getElementById("closePopup");
@@ -1252,5 +1268,6 @@
     }, 10);
 
   </script>
+  <script src="./slidingDoor.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Martex Clone</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./slidingDoor.config.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     @keyframes scroll {
@@ -27,7 +28,7 @@
   <script>lucide.createIcons();</script>
 </head>
 
-<body>
+<body class="bg-gray-100 dark:bg-black transition-colors duration-300">
     <nav id="navbar" class="fixed top-0 left-0 w-full h-20 flex items-center bg-white transition-all duration-300 z-50">
         <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
           <a href="./index.html" class="flex items-center gap-3">
@@ -96,76 +97,82 @@
         </div>
     </div>
     
+    <button id="themeBtn" class="fixed right-0 top-16 z-[100] w-14 h-14 bg-pink-500 text-white rounded-l-lg shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path id="themeIcon" stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+      </svg>    
+    </button>
 
-  <section class="m-20">
-    <div class="grid grid-cols-2">
-      <div>
+
+  <section class="px-24 py-24">
+    <div class="group slidingDoor grid grid-cols-2">
+      <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-11-img.jpg" alt="" class="rounded-2xl">
       </div>
-      <div class="flex flex-col gap-8 px-20 justify-center">
+      <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex flex-col gap-8 px-20 justify-center">
         <h5 class="text-lg text-blue-500 font-semibold">Social Media Marketing</h5>
-        <h2  class="text-5xl text-gray-700 font-semibold hover:underline">Congue magna tempor and ipsum Martex sapien turpis laoreet augue</h2>
-        <p class="text-lg text-gray-500">Aliqum mullam blandit vitae and tempor sapien and donec lipsum gravida porta undo velna dolor libero a risus aliquet tempus posuere a tempor velna tempus posuere dolor</p>
-        <span class="text-lg text-gray-500"><strong>By Martex Team</strong>  |Apr 28, 2023</span>
+        <h2  class="text-5xl text-gray-700 dark:text-white transition-colors duration-300 font-semibold hover:underline">Congue magna tempor and ipsum Martex sapien turpis laoreet augue</h2>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Aliqum mullam blandit vitae and tempor sapien and donec lipsum gravida porta undo velna dolor libero a risus aliquet tempus posuere a tempor velna tempus posuere dolor</p>
+        <span class="text-lg text-gray-500 dark:text-white transition-colors duration-300"><strong>By Martex Team</strong>  |Apr 28, 2023</span>
       </div>
     </div>
   </section>
 
-  <section class="m-20">
+  <section class="px-24 py-24">
     <div class="grid grid-cols-3 gap-10 mt-20">
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-1-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-red-500 font-semibold">Product News</h5>
         <h3  class="text-2xl font-semibold hover:underline">Aliqum mullam porta blandit: tempor sapien and gravida</h3>
-        <p class="text-lg text-gray-500">Egestas luctus vitae augue and ipsum ultrice quisque in cursus lacus feugiat congue diam ultrice laoreet sagittis</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Egestas luctus vitae augue and ipsum ultrice quisque in cursus lacus feugiat congue diam ultrice laoreet sagittis</p>
         <span><strong>By Martex Team</strong> | Apr 23, 2023</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-2-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-green-500 font-semibold">Community</h5>
         <h3  class="text-2xl font-semibold hover:underline">Porttitor cursus fusce egestas CEO cursus at magna sapien suscipit and egestas ipsum</h3>
-        <p class="text-lg text-gray-500">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
         <span><strong>By Miranda Green</strong> | Apr 09, 2023</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-3-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-[#BE6CBE] font-semibold">Freelancer Tips</h5>
         <h3  class="text-2xl font-semibold hover:underline">Cubilia laoreet augue egestas and Martex magna impedit</h3>
-        <p class="text-lg text-gray-500">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
         <span><strong>By Helen J.</strong> | Apr 01, 2023</span>
       </div>
     </div>
   </section>
 
-  <section class="m-20">
-    <h2 class="text-5xl text-gray-700">Latest News></h2>
+  <section class="px-24 py-24">
+    <h2 class="text-5xl text-gray-700 dark:text-white transition-colors duration-300">Latest News></h2>
     <div class="grid grid-cols-3 gap-10 mt-20">
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-4-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-red-500 font-semibold">Product News</h5>
         <h3  class="text-2xl font-semibold hover:underline">Phasellus blandit justo undo aliquam vitae molestie nunc sapien augue justo aliquet</h3>
-        <p class="text-lg text-gray-500">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
         <span><strong>By Miranda Green</strong> | Mar 20, 2023</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-5-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-[#BE6CBE]  font-semibold">Community</h5>
         <h3  class="text-2xl font-semibold hover:underline">Blandit justo phasellus undo aliquam diam molestie vitae</h3>
-        <p class="text-lg text-gray-500">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
         <span><strong>By Martex Team</strong> | Mar 13, 2023</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-6-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-blue-500 font-semibold">Freelancer Tips</h5>
         <h3  class="text-2xl font-semibold hover:underline">Cursus porttitor fusce neque CEO egestas cursus magna sapien and ipsum suscipit</h3>
-        <p class="text-lg text-gray-500">Mullam ipsum aliqum vitae and blandit vitae tempor sapien and lipsum donec</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Mullam ipsum aliqum vitae and blandit vitae tempor sapien and lipsum donec</p>
         <span><strong>By Martex Team</strong> | Feb 23, 2023</span>
       </div>
     </div>
   </section>
 
-  <section class="m-20 grid grid-cols-2 items-center bg-gray-700 rounded-2xl">
-    <div>
+  <section class="group slidingDoor px-24 py-24 grid grid-cols-2 items-center bg-gray-700 rounded-2xl">
+    <div class="opacity-0 translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-right">
       <p class="text-red-500 font-semibold uppercase tracking-wider m-6">
         Video Tutorials
       </p>
@@ -175,11 +182,11 @@
       <p class="text-white text-xl leading-relaxed m-6">Aliqum mullam blandit vitae and tempor sapien and donec lipsum gravida porta undo velna dolor libero risus aliquet tempus posuere vitae tempor</p>
       <span class="text-white m-6"><strong>By Martex Team</strong> | Apr 14, 2023      </span>
     </div>
-    <div class="flex justify-center relative">
+    <div class="opacity-0 -translate-x-[20%] motion-reduce:opacity-100 motion-reduce:translate-x-0 motion-reduce:animate-none group-[&.is-visible]:animate-martex-fade-in-left flex justify-center relative">
       <a href="https://www.youtube.com/embed/7e90gBu4pas" target="_blank">
         <div class="absolute z-10 left-1/2 top-1/2 
                     -translate-x-1/2 -translate-y-1/2 
-                    bg-white w-20 h-20 
+                    bg-white dark:bg-black transition-colors duration-300 w-20 h-20 
                     rounded-full flex items-center justify-center 
                     shadow-lg hover:scale-110 transition">
 
@@ -194,53 +201,53 @@
     </div>
   </section>
 
-  <section class="m-20">
-    <h2 class="text-5xl text-gray-700">All Stories ></h2>
+  <section class="px-24 py-24">
+    <h2 class="text-5xl text-gray-700 dark:text-white transition-colors duration-300">All Stories ></h2>
     <div class="grid grid-cols-3 gap-10 mt-20">
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-7-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-red-500 font-semibold">Product News</h5>
         <h3  class="text-2xl font-semibold hover:underline">Phasellus blandit justo undo aliquam diam vitae molestie</h3>
-        <p class="text-lg text-gray-500">Egestas luctus vitae augue and ipsum ultrice quisque in cursus lacus feugiat congue diam ultrice laoreet sagittis</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Egestas luctus vitae augue and ipsum ultrice quisque in cursus lacus feugiat congue diam ultrice laoreet sagittis</p>
         <span><strong>By Martex Team</strong> | Feb 02, 2023</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-8-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-[#BE6CBE]  font-semibold">Community</h5>
         <h3  class="text-2xl font-semibold hover:underline">Porttitor cursus fusce neque CEO egestas cursus magna sapien and suscipit ipsum</h3>
-        <p class="text-lg text-gray-500">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Aliqum mullam ipsum vitae and blandit vitae tempor sapien and donec lipsum</p>
         <span><strong>By Miranda Green</strong> | Jan 26, 2023</span>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="martex-pop opacity-0 translate-y-[30%] motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:animate-none [&.is-visible]:animate-martex-fade-in-up flex flex-col gap-4">
         <img src="https://martex-tailwindcss.ibthemespro.com/images/blog/post-9-img.jpg" alt="" class="rounded-2xl">
         <h5 class="text-lg text-blue-500 font-semibold">Freelancer Tips</h5>
         <h3  class="text-2xl font-semibold hover:underline">Aliqum mullam porta blandit: lacus and sapien gravida</h3>
-        <p class="text-lg text-gray-500">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
+        <p class="text-lg text-gray-500 dark:text-white transition-colors duration-300">Luctus vitae egestas augue and ipsum ultrice quisque in cursus lacus feugiat egets congue ultrice sagittis laoreet</p>
         <span><strong>By Miranda Green</strong> | Jan 12, 2023</span>
       </div>
     </div>
-    <div class="flex gap-10 text-center justify-center m-24">
-      <a href="/ourBlogs.html">
-        <span class="text-2xl text-gray-500 font-bold"><</span>
+    <div class="flex gap-10 text-center justify-center px-24 py-24">
+      <a href="./ourBlogs.html">
+        <span class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 font-bold"><</span>
       </a>
-      <a href="/ourBlogs.html">
+      <a href="./ourBlogs.html">
         <span class="bg-blue-500 px-3 py-1 text-2xl text-white font-bold rounded-lg">1</span>
       </a>
-      <a href="/ourBlogs.html">
-        <span class="text-2xl text-gray-500 font-bold">2</span>
+      <a href="./ourBlogs.html">
+        <span class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 font-bold">2</span>
       </a>
-      <a href="/ourBlogs.html">
-        <span class="text-2xl text-gray-500 font-bold">3</span>
+      <a href="./ourBlogs.html">
+        <span class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 font-bold">3</span>
       </a>
-      <a href="/ourBlogs.html">
-        <span class="text-2xl text-gray-500 font-bold">></span>
+      <a href="./ourBlogs.html">
+        <span class="text-2xl text-gray-500 dark:text-white transition-colors duration-300 font-bold">></span>
       </a>
     </div>
   </section>    
 
-  <section class="m-20">
+  <section class="px-24 py-24">
     <div class="flex flex-col md:flex-row md:items-end gap-6">  
-      <label for="email" class="text-4xl text-gray-700 font-bold md:w-1/2">
+      <label for="email" class="text-4xl text-gray-700 dark:text-white transition-colors duration-300 font-bold md:w-1/2">
         Stay up to date with our news, ideas and updates
       </label>
       <div class="md:flex-1">
@@ -249,7 +256,7 @@
           type="email"
           id="newsletterEmail"
           placeholder="Your Email Address"
-          class="flex-1 bg-gray-100 rounded-lg border px-5 py-4 text-xl text-gray-800"
+          class="flex-1 bg-gray-100 dark:bg-black transition-colors duration-300 rounded-lg border px-5 py-4 text-xl text-gray-800"
         />
         <button id="newsletterSubscribeBtn" type="button" class="text-lg bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition px-6 py-4 whitespace-nowrap">
           Subscribe Now
@@ -260,56 +267,61 @@
     </div>
   </section>
 
-  <footer class="m-20">
+  <footer class="px-24 py-24">
     <div class="flex space-x-24">
-      <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png"
+      <a href="./index.html" class="shrink-0 self-start">
+        <img src="https://martex-tailwindcss.ibthemespro.com/images/logo-blue.png"
             alt="Martex Logo"
             class="h-8 object-contain">
+      </a>
       <div class="flex flex-col gap-6">
         <h4 class="text-xl font-bold">Company</h4>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>About Us</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./aboutUs.html" class="hover:text-gray-800 transition">About Us</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Careers</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./aboutUs.html#team" class="hover:text-gray-800 transition">Careers</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Our Blog</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./ourBlogs.html" class="hover:text-gray-800 transition">Our Blog</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Contact Us</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./helpCenter.html" class="hover:text-gray-800 transition">Contact Us</a></li>
         </ul>
       </div>
 
       <div class="flex flex-col gap-6">
         <h4 class="text-xl font-bold">Product</h4>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Integration</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./integration.html" class="hover:text-gray-800 transition">Integration</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Customers</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./customers.html" class="hover:text-gray-800 transition">Customers</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Pricing</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./whatsNew.html" class="hover:text-gray-800 transition">What's New</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Help Center</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./pricing.html" class="hover:text-gray-800 transition">Pricing</a></li>
+        </ul>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./helpCenter.html" class="hover:text-gray-800 transition">Help Center</a></li>
         </ul>
       </div>
 
       <div class="flex flex-col gap-6">
         <h4 class="text-xl font-bold">Legal</h4>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Terms of Use</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./terms.html" class="hover:text-gray-800 transition">Terms of Use</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Privacy Policy</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./privacy.html" class="hover:text-gray-800 transition">Privacy Policy</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Cookie Policy</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./cookies.html" class="hover:text-gray-800 transition">Cookie Policy</a></li>
         </ul>
-        <ul class="list-none text-gray-500 text-xl">
-          <li>Site Map</li>
+        <ul class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">
+          <li><a href="./index.html" class="hover:text-gray-800 transition">Site Map</a></li>
         </ul>
       </div>
 
@@ -318,7 +330,7 @@
           Connect With Us
         </label>
         <div>
-          <span class="list-none text-gray-500 text-xl">hello@yourdomain.com</span>
+          <span class="list-none text-gray-500 dark:text-white transition-colors duration-300 text-xl">hello@yourdomain.com</span>
           <div class="flex gap-6 text-2xl text-gray-600 mt-6">
             <a href="#" class="hover:text-blue-600 transition">
               <i class="fa-brands fa-facebook"></i>
@@ -339,6 +351,14 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-between mt-20 overline">
+      <div>
+        <h5 class="text-gray-500 dark:text-white transition-colors duration-300">© 2025 Martex. All Rights Reserved</h5>
+      </div>
+      <div>
+        <span class="text-gray-500 dark:text-white transition-colors duration-300">Made by Himanshu Pandey</span>
+      </div>
+    </div>
   </footer>
 
   <script>
@@ -353,6 +373,32 @@
         navbar.classList.add("bg-white", "shadow-md");
       } else {
         navbar.classList.remove("bg-white", "shadow-md");
+      }
+    });
+
+    const themeBtn = document.getElementById('themeBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    const moonPath = "M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z";
+    const sunPath = "M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z";
+    function updateIcon() {
+      if (html.classList.contains('dark')) {
+        themeIcon.setAttribute('d', sunPath);
+      } else {
+        themeIcon.setAttribute('d', moonPath);
+      }
+    }
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      updateIcon();
+    }
+    themeBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      updateIcon();
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
       }
     });
 
@@ -408,5 +454,6 @@
       newsletterStatus.textContent = "Submitting...";
     });
   </script>
+  <script src="./slidingDoor.js"></script>
 </body>
 </html>
